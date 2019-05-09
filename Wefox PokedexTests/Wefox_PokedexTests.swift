@@ -24,20 +24,26 @@ class Wefox_PokedexTests: XCTestCase {
         
         let expectation = self.expectation(description: "No results in response data")
         
-        PokemonSearchService.search(identifier: 1) { (data, error) in
+        let searchService = PokemonSearchService()
+        
+        searchService.search(identifier: 1) { (data, error) in
             if let error = error {
-                print(">>>>>>> Error: \(error)")
+                print("Error: \(error)")
                 XCTFail("Error in the server call")
                 return
             }
             
             if let data = data {
                 let length = data.count
-                print(">>>>>>> we have some data.: \(length)")
+                print("We have some data.: \(length)")
                 expectation.fulfill()
             }
         }
         
         waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testCanParsePokemon() {
+        
     }
 }
