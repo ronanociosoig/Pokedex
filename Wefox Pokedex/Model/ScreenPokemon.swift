@@ -12,5 +12,5 @@ struct ScreenPokemon {
     let name: String
     let weight: Int
     let height: Int
-    var icon: UIImage
+    var iconPath: String?
 }

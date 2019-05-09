@@ -62,6 +62,8 @@
 		AF4E3D402284C4D900760406 /* Pokemon12.json in Resources */ = {isa = PBXBuildFile; fileRef = AF4E3D3C2284C4D900760406 /* Pokemon12.json */; };
 		AF4E3D422284D12A00760406 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D412284D12A00760406 /* Notifier.swift */; };
 		AF4E3D442284D4F500760406 /* ScreenPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D432284D4F500760406 /* ScreenPokemon.swift */; };
+		AF4E3D482284DA3600760406 /* PokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D472284DA3600760406 /* PokemonView.swift */; };
+		AF4E3D4A2284DA4800760406 /* PokemonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF4E3D492284DA4800760406 /* PokemonView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +147,8 @@
 		AF4E3D3C2284C4D900760406 /* Pokemon12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Pokemon12.json; sourceTree = "<group>"; };
 		AF4E3D412284D12A00760406 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		AF4E3D432284D4F500760406 /* ScreenPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPokemon.swift; sourceTree = "<group>"; };
+		AF4E3D472284DA3600760406 /* PokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonView.swift; sourceTree = "<group>"; };
+		AF4E3D492284DA4800760406 /* PokemonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonView.xib; sourceTree = "<group>"; };
 		C8B78A14EDC1A0E65C57E59B /* Pods_Wefox_PokedexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wefox_PokedexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1B308C39390A11EEF4B44C /* Pods-Wefox PokedexUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wefox PokedexUITests.release.xcconfig"; path = "Target Support Files/Pods-Wefox PokedexUITests/Pods-Wefox PokedexUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FA10289127BDE80E2E3783EE /* Pods-Wefox PokedexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wefox PokedexTests.release.xcconfig"; path = "Target Support Files/Pods-Wefox PokedexTests/Pods-Wefox PokedexTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 		AF4E3CB222844C2200760406 /* Wefox Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				AF4E3D462284DA1C00760406 /* Views */,
 				AF4E3D2E22848AA800760406 /* Services */,
 				AF4E3D29228487EC00760406 /* Model */,
 				AF4E3CFC228456BC00760406 /* Extensions */,
@@ -312,6 +317,7 @@
 		AF4E3D01228474B000760406 /* Catch Scene */ = {
 			isa = PBXGroup;
 			children = (
+				AF4E3D452284DA0800760406 /* Views */,
 				AF4E3D02228474CC00760406 /* CatchActions.swift */,
 				AF4E3D03228474CC00760406 /* CatchPresenter.swift */,
 				AF4E3D04228474CC00760406 /* CatchViewController.storyboard */,
@@ -376,6 +382,22 @@
 				AF4E3D362284B16000760406 /* MockData.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		AF4E3D452284DA0800760406 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AF4E3D462284DA1C00760406 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF4E3D472284DA3600760406 /* PokemonView.swift */,
+				AF4E3D492284DA4800760406 /* PokemonView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +513,7 @@
 				AF4E3CF5228455E100760406 /* HomeViewController.storyboard in Resources */,
 				AF4E3CBE22844C2500760406 /* LaunchScreen.storyboard in Resources */,
 				AF4E3D2522847EC400760406 /* PokemonCollectionViewCell.xib in Resources */,
+				AF4E3D4A2284DA4800760406 /* PokemonView.xib in Resources */,
 				AF4E3CBB22844C2500760406 /* Assets.xcassets in Resources */,
 				AF4E3CB922844C2200760406 /* Main.storyboard in Resources */,
 				AF4E3D1A228476C800760406 /* BackpackViewController.storyboard in Resources */,
@@ -669,6 +692,7 @@
 				AF4E3CF6228455E100760406 /* HomeViewController.swift in Sources */,
 				AF4E3CE422844E8200760406 /* AppController.swift in Sources */,
 				AF4E3D2422847EC400760406 /* PokemonCollectionViewCell.swift in Sources */,
+				AF4E3D482284DA3600760406 /* PokemonView.swift in Sources */,
 				AF4E3CF4228455E100760406 /* HomePresenter.swift in Sources */,
 				AF4E3CF3228455E100760406 /* HomeActions.swift in Sources */,
 				AF4E3CEA22844EA700760406 /* AppData.swift in Sources */,
