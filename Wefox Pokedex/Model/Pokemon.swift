@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Pokemon {
+struct Pokemon: Codable {
     let abilities: [Ability]
     let baseExperience: Int
     let forms: [Species]
@@ -30,43 +30,43 @@ struct Pokemon {
     let weight: Int
 }
 
-struct Ability {
+struct Ability: Codable {
     let ability: Species
     let isHidden: Bool
     let slot: Int
 }
 
-struct Species {
+struct Species: Codable {
     let name: String
     let url: String
 }
 
-struct GameIndex {
+struct GameIndex: Codable {
     let gameIndex: Int
     let version: Species
 }
 
-struct HeldItem {
+struct HeldItem: Codable {
     let item: Species
     let versionDetails: [VersionDetail]
 }
 
-struct VersionDetail {
+struct VersionDetail: Codable {
     let rarity: Int
     let version: Species
 }
 
-struct Move {
+struct Move: Codable {
     let move: Species
     let versionGroupDetails: [VersionGroupDetail]
 }
 
-struct VersionGroupDetail {
+struct VersionGroupDetail: Codable {
     let levelLearnedAt: Int
     let moveLearnMethod, versionGroup: Species
 }
 
-struct Sprites {
+struct Sprites: Codable {
     let backDefault: String
     let backFemale: String?
     let backShiny: String
@@ -77,12 +77,12 @@ struct Sprites {
     let frontShinyFemale: String?
 }
 
-struct Stat {
+struct Stat: Codable {
     let baseStat, effort: Int
     let stat: Species
 }
 
-struct TypeElement {
+struct TypeElement: Codable {
     let slot: Int
     let type: Species
 }
