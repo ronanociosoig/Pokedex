@@ -9,6 +9,10 @@
 import Foundation
 import JGProgressHUD
 
+protocol Updatable {
+    func update()
+}
+
 protocol Coordinating {
     var dataProvider: DataProvider? { get set }
     
@@ -25,6 +29,7 @@ class Coordinator: Coordinating {
     var dataProvider: DataProvider?
     var hud: JGProgressHUD?
     lazy var actions = Actions(coordinator: self)
+    var presenter: Updatable?
     
     init() {
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -52,6 +57,8 @@ class Coordinator: Coordinating {
         guard let topViewController = window.rootViewController else { return }
         
         topViewController.present(viewController, animated: true, completion: nil)
+        
+        presenter = viewController.presenter as? Updatable
     }
     
     func showBackpackScene() {
@@ -86,5 +93,11 @@ class Coordinator: Coordinating {
     func dismissLoading() {
         hud?.dismiss(animated: true)
         hud = nil
+    }
+}
+
+extension Coordinator: Notifier {
+    func dataReceived(errorMessage: String?, on queue: DispatchQueue?) {
+        // update the Catch scene
     }
 }

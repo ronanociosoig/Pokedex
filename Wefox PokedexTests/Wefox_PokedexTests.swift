@@ -8,6 +8,8 @@
 
 import XCTest
 
+// swiftlint:disable all
+
 @testable import Wefox_Pokedex
 
 class Wefox_PokedexTests: XCTestCase {
@@ -44,6 +46,19 @@ class Wefox_PokedexTests: XCTestCase {
     }
     
     func testCanParsePokemon() {
+        let data = try! MockData.loadResponse()
         
+        XCTAssertNotNil(data)
+        
+        do {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let pokemon = try decoder.decode(Pokemon.self, from: data!)
+            
+            XCTAssertNotNil(pokemon)
+        } catch (let error) {
+            XCTFail("Decoding error: \(error)")
+        }
+
     }
 }

@@ -47,7 +47,7 @@ class DataProvider: DataProviding {
             
             do {
                 let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let pokemon = try decoder.decode(Pokemon.self, from: data)
                 self.appData.pokemon = pokemon
                 
@@ -60,7 +60,7 @@ class DataProvider: DataProviding {
                // self.sort(option: self.appData.currentSortOption)
                // self.dataLoaded?.dataReceived(errorMessage: nil, on: queue)
             } catch {
-                os_log("Error: %s", log: Log.data, type: .error, error.localizedDescription)
+                os_log("Error: %s", log: Log.data, type: .error, "\(error)")
               //  self.dataLoaded?.dataReceived(errorMessage: error.localizedDescription, on: queue)
             }
         }

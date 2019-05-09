@@ -21,5 +21,7 @@ class AppController: AppControlling {
         coordinator = Coordinator()
         coordinator?.dataProvider = dataProvider
         coordinator?.start()
+        
+        dataProvider.search(identifier: 5)
     }
 }

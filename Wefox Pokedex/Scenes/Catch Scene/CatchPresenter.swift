@@ -7,14 +7,14 @@
 //
 
 protocol CatchView: class {
-    
+    func update()
 }
 
 protocol CatchPresenting: class {
     func viewDidLoad()
 }
 
-class CatchPresenter: CatchPresenting {
+class CatchPresenter: CatchPresenting, Updatable {
     
     // MARK: Properties
     
@@ -36,5 +36,9 @@ class CatchPresenter: CatchPresenting {
     
     func viewDidLoad() {
     
+    }
+    
+    func update() {
+        
     }
 }

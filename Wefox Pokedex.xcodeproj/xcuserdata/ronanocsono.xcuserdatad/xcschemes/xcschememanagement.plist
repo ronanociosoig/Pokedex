@@ -4,10 +4,38 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Wefox Pokedex Network Testing.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>Wefox Pokedex UI Testing.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 		<key>Wefox Pokedex.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>9</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>AF4E3CAF22844C2200760406</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF4E3CC322844C2500760406</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF4E3CCE22844C2500760406</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
