@@ -23,8 +23,5 @@ class AppController: AppControlling {
         coordinator?.start()
         
         dataProvider.notifier = coordinator as? Notifier
-        
-        dataProvider.search(identifier: 5)
-        
     }
 }

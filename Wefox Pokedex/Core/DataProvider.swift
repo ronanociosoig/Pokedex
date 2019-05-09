@@ -34,6 +34,8 @@ class DataProvider: DataProviding {
         let searchService = networkService.makePokemonService()
         
         searchService.search(identifier: identifier) { (data, errorMessage) in
+            let queue = DispatchQueue.main
+            
             if let errorMessage = errorMessage {
                 os_log("Error message: %s", log: Log.network, type: .error, errorMessage)
                 return
@@ -41,7 +43,7 @@ class DataProvider: DataProviding {
             
             guard let data = data else {
                 os_log("Error message: %s", log: Log.network, type: .error, Constants.Translations.Error.noDataError)
-                // self.dataLoaded?.dataReceived(errorMessage: Constants.Translations.Error.noDataError, on: queue)
+                self.notifier?.dataReceived(errorMessage: Constants.Translations.Error.noDataError, on: queue)
                 return
             }
             
@@ -50,18 +52,12 @@ class DataProvider: DataProviding {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let pokemon = try decoder.decode(Pokemon.self, from: data)
                 self.appData.pokemon = pokemon
-                
-//                if serverResponse.resultCount == 0 {
-//                    self.dataLoaded?.dataReceived(errorMessage: Constants.Translations.Error.noResultsFound, on: queue)
-//                    return
-//                }
-                
-                //self.prepareSearchResults()
-               // self.sort(option: self.appData.currentSortOption)
-               // self.dataLoaded?.dataReceived(errorMessage: nil, on: queue)
+                self.notifier?.dataReceived(errorMessage: nil, on: queue)
+                os_log("Success: %s", log: Log.network, type: .default, "Loaded")
             } catch {
-                os_log("Error: %s", log: Log.data, type: .error, "\(error)")
-              //  self.dataLoaded?.dataReceived(errorMessage: error.localizedDescription, on: queue)
+                let errorMessage = "\(error)"
+                os_log("Error: %s", log: Log.data, type: .error, errorMessage)
+                self.notifier?.dataReceived(errorMessage: errorMessage, on: queue)
             }
         }
     }

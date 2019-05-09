@@ -22,6 +22,7 @@ protocol Coordinating {
     func showHomeScene()
     func showCatchScene()
     func showBackpackScene()
+    func showAlert(with errorMessage: String)
 }
 
 class Coordinator: Coordinating {
@@ -30,6 +31,7 @@ class Coordinator: Coordinating {
     var hud: JGProgressHUD?
     lazy var actions = Actions(coordinator: self)
     var presenter: Updatable?
+    var currentViewController: UIViewController?
     
     init() {
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -59,6 +61,12 @@ class Coordinator: Coordinating {
         topViewController.present(viewController, animated: true, completion: nil)
         
         presenter = viewController.presenter as? Updatable
+        
+        currentViewController = viewController
+        
+        dataProvider.search(identifier: 5)
+        
+        showLoading()
     }
     
     func showBackpackScene() {
@@ -75,6 +83,7 @@ class Coordinator: Coordinating {
         
         topViewController.present(navigationController, animated: true, completion: nil)
         
+        currentViewController = navigationController
     }
     
     func showLoading() {
@@ -82,22 +91,53 @@ class Coordinator: Coordinating {
     }
     
     private func showHud(with message: String) {
-        
-        guard let topViewController = window.rootViewController else { return }
-        
+        guard let viewController = currentViewController else { return }
         hud = JGProgressHUD(style: .dark)
         hud?.textLabel.text = message
-        hud?.show(in: topViewController.view)
+        hud?.show(in: viewController.view)
     }
     
     func dismissLoading() {
         hud?.dismiss(animated: true)
         hud = nil
     }
+    
+    func showAlert(with message: String) {
+        let alertController = UIAlertController(title: nil,
+                                                message: message,
+                                                preferredStyle: .alert)
+        
+        let okButton = UIAlertAction(title: Constants.Translations.ok,
+                                     style: .default,
+                                     handler: nil)
+        
+        alertController.addAction(okButton)
+        
+        guard let viewController = currentViewController else { return }
+        
+        viewController.present(alertController,
+                               animated: true,
+                               completion: nil)
+    }
 }
 
 extension Coordinator: Notifier {
     func dataReceived(errorMessage: String?, on queue: DispatchQueue?) {
-        // update the Catch scene
+        
+        var localQueue = queue
+        
+        if localQueue == nil {
+            localQueue = .global(qos: .userInteractive)
+        }
+        
+        localQueue?.async {
+            self.dismissLoading()
+            
+            if let errorMessage = errorMessage {
+                self.showAlert(with: errorMessage)
+            } else {
+                self.showAlert(with: "Success, Pokemon loaded.")
+            }
+        }
     }
 }
