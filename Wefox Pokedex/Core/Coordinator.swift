@@ -55,7 +55,19 @@ class Coordinator: Coordinating {
     }
     
     func showBackpackScene() {
-        print("WARNING: Show backpack not implemented")
+        guard let dataProvider = dataProvider else { return }
+        
+        let navigationController = BackpackWireframe.makeNavigationController()
+        guard let viewController = navigationController.topViewController as? BackpackViewController else { return }
+        
+        BackpackWireframe.prepare(viewController,
+                                  actions: actions as BackpackActions,
+                                  dataProvider: dataProvider as BackpackDataProvider)
+        
+        guard let topViewController = window.rootViewController else { return }
+        
+        topViewController.present(navigationController, animated: true, completion: nil)
+        
     }
     
     func showLoading() {
