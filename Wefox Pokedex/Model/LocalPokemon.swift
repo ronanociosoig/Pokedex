@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Pokemon: Codable {
+struct LocalPokemon: Codable {
     let name: String
     let weight: Int
     let height: Int

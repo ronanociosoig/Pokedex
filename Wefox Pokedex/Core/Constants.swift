@@ -12,6 +12,11 @@ import Foundation
 
 struct Constants {
     
+    struct Network {
+        static let baseUrlPath = "https://pokeapi.co/api/v2/"
+        static let searchPath = "pokemon"
+    }
+    
     struct Translations {
         static let loading = "Loading"
         static let ok = "OK"

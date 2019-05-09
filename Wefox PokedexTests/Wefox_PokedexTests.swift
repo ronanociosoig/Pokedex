@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import Wefox_Pokedex
 
 class Wefox_PokedexTests: XCTestCase {
@@ -19,16 +20,24 @@ class Wefox_PokedexTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testEndpointReturnsData() {
+        
+        let expectation = self.expectation(description: "No results in response data")
+        
+        PokemonSearchService.search(identifier: 1) { (data, error) in
+            if let error = error {
+                print(">>>>>>> Error: \(error)")
+                XCTFail("Error in the server call")
+                return
+            }
+            
+            if let data = data {
+                let length = data.count
+                print(">>>>>>> we have some data.: \(length)")
+                expectation.fulfill()
+            }
         }
+        
+        waitForExpectations(timeout: 5, handler: nil)
     }
-
 }
