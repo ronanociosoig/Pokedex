@@ -6,6 +6,8 @@
 //  Copyright © 2019 Sonomos. All rights reserved.
 //
 
+// swiftlint:disable weak_delegate
+
 protocol BackpackView: class {
     
 }
@@ -18,7 +20,7 @@ protocol BackpackPresenting: class {
 
 class BackpackPresenter: BackpackPresenting {
     
-    // MARK:- Properties
+    // MARK: Properties
     
     weak var view: BackpackView?
     var actions: BackpackActions
@@ -26,7 +28,7 @@ class BackpackPresenter: BackpackPresenting {
     var dataSource: BackpackDataSource
     var delegate: BackpackDelegate
     
-    // MARK:- Typealias
+    // MARK: Typealias
     
     typealias Actions = BackpackActions
     typealias DataProvider = BackpackDataProvider

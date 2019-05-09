@@ -46,6 +46,9 @@
 		AF4E3D1D228476C800760406 /* BackpackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D15228476C800760406 /* BackpackDelegate.swift */; };
 		AF4E3D1E228476C800760406 /* BackpackWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D16228476C800760406 /* BackpackWireframe.swift */; };
 		AF4E3D2022847C1B00760406 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D1F22847C1B00760406 /* UIBarButtonItem+Extension.swift */; };
+		AF4E3D2422847EC400760406 /* PokemonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D2222847EC400760406 /* PokemonCollectionViewCell.swift */; };
+		AF4E3D2522847EC400760406 /* PokemonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF4E3D2322847EC400760406 /* PokemonCollectionViewCell.xib */; };
+		AF4E3D27228484F100760406 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D26228484F100760406 /* UITableViewCell+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +117,9 @@
 		AF4E3D15228476C800760406 /* BackpackDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackpackDelegate.swift; sourceTree = "<group>"; };
 		AF4E3D16228476C800760406 /* BackpackWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackpackWireframe.swift; sourceTree = "<group>"; };
 		AF4E3D1F22847C1B00760406 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		AF4E3D2222847EC400760406 /* PokemonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF4E3D2322847EC400760406 /* PokemonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonCollectionViewCell.xib; sourceTree = "<group>"; };
+		AF4E3D26228484F100760406 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		C8B78A14EDC1A0E65C57E59B /* Pods_Wefox_PokedexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wefox_PokedexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1B308C39390A11EEF4B44C /* Pods-Wefox PokedexUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wefox PokedexUITests.release.xcconfig"; path = "Target Support Files/Pods-Wefox PokedexUITests/Pods-Wefox PokedexUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FA10289127BDE80E2E3783EE /* Pods-Wefox PokedexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wefox PokedexTests.release.xcconfig"; path = "Target Support Files/Pods-Wefox PokedexTests/Pods-Wefox PokedexTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -265,6 +271,7 @@
 		AF4E3CFC228456BC00760406 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AF4E3D26228484F100760406 /* UITableViewCell+Extension.swift */,
 				AF4E3CFF228456D200760406 /* Loadable.swift */,
 				AF4E3CFD228456C900760406 /* UIViewController+StoryboardInstantiable.swift */,
 				AF4E3D1F22847C1B00760406 /* UIBarButtonItem+Extension.swift */,
@@ -288,6 +295,7 @@
 		AF4E3D0E228476AA00760406 /* Backpack Scene */ = {
 			isa = PBXGroup;
 			children = (
+				AF4E3D2122847E9500760406 /* Cells */,
 				AF4E3D0F228476C800760406 /* BackpackActions.swift */,
 				AF4E3D10228476C800760406 /* BackpackPresenter.swift */,
 				AF4E3D11228476C800760406 /* BackpackDataSource.swift */,
@@ -298,6 +306,15 @@
 				AF4E3D16228476C800760406 /* BackpackWireframe.swift */,
 			);
 			path = "Backpack Scene";
+			sourceTree = "<group>";
+		};
+		AF4E3D2122847E9500760406 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AF4E3D2222847EC400760406 /* PokemonCollectionViewCell.swift */,
+				AF4E3D2322847EC400760406 /* PokemonCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +329,7 @@
 				AF4E3CAD22844C2200760406 /* Frameworks */,
 				AF4E3CAE22844C2200760406 /* Resources */,
 				2C9900AB7E5D058D08D7512D /* [CP] Embed Pods Frameworks */,
+				AF4E3D28228485A600760406 /* Swift Lint Run Script */,
 			);
 			buildRules = (
 			);
@@ -411,6 +429,7 @@
 				AF4E3D0A228474CC00760406 /* CatchViewController.storyboard in Resources */,
 				AF4E3CF5228455E100760406 /* HomeViewController.storyboard in Resources */,
 				AF4E3CBE22844C2500760406 /* LaunchScreen.storyboard in Resources */,
+				AF4E3D2522847EC400760406 /* PokemonCollectionViewCell.xib in Resources */,
 				AF4E3CBB22844C2500760406 /* Assets.xcassets in Resources */,
 				AF4E3CB922844C2200760406 /* Main.storyboard in Resources */,
 				AF4E3D1A228476C800760406 /* BackpackViewController.storyboard in Resources */,
@@ -486,6 +505,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wefox Pokedex/Pods-Wefox Pokedex-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AF4E3D28228485A600760406 /* Swift Lint Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint --quiet\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		C9036567B9FB556BB8E550AA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -538,6 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF4E3D18228476C800760406 /* BackpackPresenter.swift in Sources */,
+				AF4E3D27228484F100760406 /* UITableViewCell+Extension.swift in Sources */,
 				AF4E3D1C228476C800760406 /* BackpackDataProvider.swift in Sources */,
 				AF4E3CE622844E8E00760406 /* Coordinator.swift in Sources */,
 				AF4E3D19228476C800760406 /* BackpackDataSource.swift in Sources */,
@@ -557,6 +595,7 @@
 				AF4E3CFE228456C900760406 /* UIViewController+StoryboardInstantiable.swift in Sources */,
 				AF4E3CF6228455E100760406 /* HomeViewController.swift in Sources */,
 				AF4E3CE422844E8200760406 /* AppController.swift in Sources */,
+				AF4E3D2422847EC400760406 /* PokemonCollectionViewCell.swift in Sources */,
 				AF4E3CF4228455E100760406 /* HomePresenter.swift in Sources */,
 				AF4E3CF3228455E100760406 /* HomeActions.swift in Sources */,
 				AF4E3CEA22844EA700760406 /* AppData.swift in Sources */,

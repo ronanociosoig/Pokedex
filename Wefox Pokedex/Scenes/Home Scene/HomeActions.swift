@@ -6,7 +6,6 @@
 //  Copyright © 2019 Sonomos. All rights reserved.
 //
 
-
 protocol HomeActions {
     func ballButtonAction()
     func backpackButtonAction()

@@ -8,12 +8,15 @@
 
 import Foundation
 
+// swiftlint:disable nesting identifier_name
+
 struct Constants {
     
     struct Translations {
         static let loading = "Loading"
         static let ok = "OK"
         static let cancel = "Cancel"
+        static let close = "Close"
         
         struct HomeScene {
             static let catchTitle = "Catch a Pokemon"
@@ -34,8 +37,6 @@ struct Constants {
             static let height = "Height"
             static let date = "Date"
         }
-        
-        
     }
     
     struct PokemonAPI {

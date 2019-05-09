@@ -11,7 +11,7 @@ import UIKit
 extension UIBarButtonItem {
     
     /// Typealias for UIBarButtonItem closure.
-    typealias UIBarButtonItemTargetClosure = (UIBarButtonItem) -> ()
+    typealias UIBarButtonItemTargetClosure = (UIBarButtonItem) -> Void
     
     private class UIBarButtonItemClosureWrapper: NSObject {
         let closure: UIBarButtonItemTargetClosure
