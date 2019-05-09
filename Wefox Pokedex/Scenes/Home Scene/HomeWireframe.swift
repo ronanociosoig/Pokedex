@@ -15,7 +15,7 @@ class HomeWireframe {
         return HomeViewController.instantiateFromStoryboard(storyboard: storyboard)
     }
     
-    static func prepare(_ viewController: HomeViewController, with  actions: HomeActions, dataProvider: HomeDataProvider) {
+    static func prepare(_ viewController: HomeViewController, actions: HomeActions, dataProvider: HomeDataProvider) {
     	let presenter =  HomePresenter(view: viewController, actions: actions, dataProvider: dataProvider)
         viewController.presenter = presenter
     }

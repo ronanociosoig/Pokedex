@@ -37,7 +37,7 @@ class Coordinator: Coordinating {
     func showHomeScene() {
         guard let dataProvider = dataProvider else { return }
         let viewController = HomeWireframe.makeViewController()
-        HomeWireframe.prepare(viewController, with: actions as HomeActions, dataProvider: dataProvider as HomeDataProvider)
+        HomeWireframe.prepare(viewController, actions: actions as HomeActions, dataProvider: dataProvider as HomeDataProvider)
         
         window.rootViewController = viewController
     }
