@@ -9,5 +9,6 @@
 import Foundation
 
 class AppData {
-    
+    var pokemon: Pokemon?
+    var pokemons = [LocalPokemon]()
 }
