@@ -137,6 +137,8 @@ extension Coordinator: Notifier {
                 self.showAlert(with: errorMessage)
             } else {
                 self.showAlert(with: "Success, Pokemon loaded.")
+                
+                self.presenter?.update()
             }
         }
     }

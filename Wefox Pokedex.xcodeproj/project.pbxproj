@@ -317,7 +317,6 @@
 		AF4E3D01228474B000760406 /* Catch Scene */ = {
 			isa = PBXGroup;
 			children = (
-				AF4E3D452284DA0800760406 /* Views */,
 				AF4E3D02228474CC00760406 /* CatchActions.swift */,
 				AF4E3D03228474CC00760406 /* CatchPresenter.swift */,
 				AF4E3D04228474CC00760406 /* CatchViewController.storyboard */,
@@ -382,13 +381,6 @@
 				AF4E3D362284B16000760406 /* MockData.swift */,
 			);
 			path = Mocks;
-			sourceTree = "<group>";
-		};
-		AF4E3D452284DA0800760406 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		AF4E3D462284DA1C00760406 /* Views */ = {

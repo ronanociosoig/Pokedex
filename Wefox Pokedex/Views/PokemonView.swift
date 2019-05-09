@@ -9,13 +9,8 @@
 import UIKit
 
 class PokemonView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var weight: UILabel!
+    @IBOutlet weak var height: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
 }

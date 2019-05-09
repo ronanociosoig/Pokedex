@@ -12,6 +12,7 @@ protocol CatchView: class {
 
 protocol CatchPresenting: class {
     func viewDidLoad()
+    func pokemon() -> ScreenPokemon?
 }
 
 class CatchPresenter: CatchPresenting, Updatable {
@@ -20,6 +21,7 @@ class CatchPresenter: CatchPresenting, Updatable {
     
     weak var view: CatchView?
     var actions: CatchActions
+    
     var dataProvider: CatchDataProvider
     
     // MARK: Typealias
@@ -39,6 +41,10 @@ class CatchPresenter: CatchPresenting, Updatable {
     }
     
     func update() {
-        
+        view?.update()
+    }
+    
+    func pokemon() -> ScreenPokemon? {
+        return dataProvider.pokemon()
     }
 }
