@@ -9,5 +9,9 @@
 import Foundation
 
 class Actions {
+    let coordinator: Coordinating
     
+    init(coordinator: Coordinating) {
+        self.coordinator = coordinator
+    }
 }

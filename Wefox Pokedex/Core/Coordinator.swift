@@ -16,14 +16,15 @@ protocol Coordinating {
     func showLoading()
     func dismissLoading()
     func showHomeScene()
+    func showCatchScene()
+    func showBackpackScene()
 }
 
 class Coordinator: Coordinating {
     let window: UIWindow
     var dataProvider: DataProvider?
     var hud: JGProgressHUD?
-    let actions = Actions()
-    
+    lazy var actions = Actions(coordinator: self)
     
     init() {
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -40,6 +41,14 @@ class Coordinator: Coordinating {
         HomeWireframe.prepare(viewController, actions: actions as HomeActions, dataProvider: dataProvider as HomeDataProvider)
         
         window.rootViewController = viewController
+    }
+    
+    func showCatchScene() {
+        print("WARNING: Show catch not implemented")
+    }
+    
+    func showBackpackScene() {
+        print("WARNING: Show backpack not implemented")
     }
     
     func showLoading() {

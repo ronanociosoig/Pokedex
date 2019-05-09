@@ -12,6 +12,8 @@ protocol HomeView: class {
 
 protocol HomePresenting: class {
     func viewDidLoad()
+    func ballButtonAction()
+    func backpackButtonAction()
 }
 
 class HomePresenter: HomePresenting {
@@ -36,5 +38,13 @@ class HomePresenter: HomePresenting {
     
     func viewDidLoad() {
     
+    }
+    
+    func ballButtonAction() {
+        actions.ballButtonAction()
+    }
+    
+    func backpackButtonAction() {
+        actions.backpackButtonAction()
     }
 }
