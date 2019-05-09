@@ -13,7 +13,13 @@ protocol AppControlling {
 }
 
 class AppController: AppControlling {
+    var coordinator: Coordinating?
+    
     func start() {
+        let dataProvider = DataProvider()
         
+        coordinator = Coordinator()
+        coordinator?.dataProvider = dataProvider
+        coordinator?.start()
     }
 }

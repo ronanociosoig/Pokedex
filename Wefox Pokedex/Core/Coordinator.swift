@@ -10,6 +10,8 @@ import Foundation
 import JGProgressHUD
 
 protocol Coordinating {
+    var dataProvider: DataProvider? { get set }
+    
     func start()
     func showLoading()
     func dismissLoading()
@@ -19,13 +21,13 @@ protocol Coordinating {
 class Coordinator: Coordinating {
     let window: UIWindow
     var dataProvider: DataProvider?
-    var appController: AppController
     var hud: JGProgressHUD?
+    let actions = Actions()
     
-    init(appController: AppController) {
+    
+    init() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()
-        self.appController = appController
     }
     
     func start() {
@@ -33,7 +35,11 @@ class Coordinator: Coordinating {
     }
     
     func showHomeScene() {
+        guard let dataProvider = dataProvider else { return }
+        let viewController = HomeWireframe.makeViewController()
+        HomeWireframe.prepare(viewController, with: actions as HomeActions, dataProvider: dataProvider as HomeDataProvider)
         
+        window.rootViewController = viewController
     }
     
     func showLoading() {
