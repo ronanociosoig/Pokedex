@@ -11,12 +11,23 @@ import Foundation
 import Moya
 import Result
 
+protocol ServiceProvider: AnyObject {
+    func makePokemonService() -> PokemonSearchLoadingService
+}
+
+class NetworkService: ServiceProvider {
+    
+    func makePokemonService() -> PokemonSearchLoadingService {
+        return PokemonSearchService()
+    }
+}
+
 protocol PokemonSearchLoadingService: class {
-    static func search(identifier: Int, completion: @escaping (_ data: Data?, _ error: String?) -> Void)
+    func search(identifier: Int, completion: @escaping (_ data: Data?, _ error: String?) -> Void)
 }
 
 class PokemonSearchService: PokemonSearchLoadingService {
-    static var provider: MoyaProvider<PokemonSearchEndpoint> {
+    var provider: MoyaProvider<PokemonSearchEndpoint> {
         //if Configuration.networkTesting {
         //    return MoyaProvider<PokemonSearchEndpoint>(plugins: [NetworkLoggerPlugin(verbose: true)])
         //} else {
@@ -24,7 +35,7 @@ class PokemonSearchService: PokemonSearchLoadingService {
         //}
     }
     
-    static func search(identifier: Int, completion: @escaping (_ data: Data?, _ error: String?) -> Void) {
+    func search(identifier: Int, completion: @escaping (_ data: Data?, _ error: String?) -> Void) {
         provider.request(.search(identifier: identifier)) { result in
             switch result {
             case .success(let response):

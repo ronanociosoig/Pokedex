@@ -16,7 +16,7 @@ class AppController: AppControlling {
     var coordinator: Coordinating?
     
     func start() {
-        let dataProvider = DataProvider()
+        let dataProvider = DataProvider(service: NetworkService())
         
         coordinator = Coordinator()
         coordinator?.dataProvider = dataProvider
