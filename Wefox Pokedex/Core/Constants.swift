@@ -21,7 +21,6 @@ struct Constants {
         static let loading = "Loading"
         static let ok = "OK"
         static let cancel = "Cancel"
-        static let close = "Close"
         
         struct HomeScene {
             static let catchTitle = "Catch a Pokemon"
@@ -41,6 +40,12 @@ struct Constants {
             static let weight = "Weight"
             static let height = "Height"
             static let date = "Date"
+        }
+        
+        struct Error {
+            static let jsonDecodingError = "Error: JSON decoding error."
+            static let noDataError = "Error: No data received."
+            static let noResultsFound = "No results were found for your search."
         }
     }
     
