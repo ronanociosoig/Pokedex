@@ -18,6 +18,8 @@ class BackpackViewController: UIViewController {
         setupCollectionView()
         guard let presenter = presenter else { return }
         presenter.viewDidLoad()
+        
+        title = Constants.Translations.BackpackScene.title
     }
     
     private func setupCollectionView() {
@@ -29,5 +31,7 @@ class BackpackViewController: UIViewController {
 }
 
 extension BackpackViewController: BackpackView {
-    
+    func setDataSource(dataSource: BackpackDataSource) {
+        dataSource.register(collectionView: collectionView)
+    }
 }

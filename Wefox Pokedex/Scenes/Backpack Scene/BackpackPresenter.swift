@@ -9,7 +9,7 @@
 // swiftlint:disable weak_delegate
 
 protocol BackpackView: class {
-    
+    func setDataSource(dataSource: BackpackDataSource)
 }
 
 protocol BackpackPresenting: class {
@@ -47,6 +47,6 @@ class BackpackPresenter: BackpackPresenting {
     }
     
     func viewDidLoad() {
-    
+        view?.setDataSource(dataSource: dataSource)
     }
 }

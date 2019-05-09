@@ -21,6 +21,7 @@ class BackpackDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeue(cellType: PokemonCollectionViewCell.self, for: indexPath)
+        return cell
     }
 }

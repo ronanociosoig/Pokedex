@@ -17,17 +17,8 @@ class BackpackWireframe {
     
     static func makeNavigationController() -> UINavigationController {
         let viewController = makeViewController()
-        
         let navigationController = UINavigationController(rootViewController: viewController)
-        
-        viewController.title = "Backpack"
-        
-//        let navigationBarButton = UIBarButtonItem(title: Constants.Translations.cancel,
-//                                                  style: .plain,
-//                                                  target: navigationController,
-//                                                  action: #selector(closeScene))
-        
-        let navigationBarButton = UIBarButtonItem(title: Constants.Translations.cancel,
+        let navigationBarButton = UIBarButtonItem(title: Constants.Translations.BackpackScene.closeButton,
                                                   style: .plain) { _ in
                                                     viewController.dismiss(animated: true, completion: nil)
         }
