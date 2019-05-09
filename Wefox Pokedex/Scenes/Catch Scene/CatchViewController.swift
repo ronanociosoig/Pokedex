@@ -18,6 +18,12 @@ class CatchViewController: UIViewController {
         guard let presenter = presenter else { return }
         presenter.viewDidLoad()
     }
+    
+    @IBAction func ballAction() {
+        dismiss(animated: true) {
+            // add the Pokemon to the backpack and store it.
+        }
+    }
 }
 
 extension CatchViewController: CatchView {

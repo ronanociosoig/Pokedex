@@ -28,6 +28,9 @@
                                     <constraint firstAttribute="height" constant="120" id="mYr-ZQ-7iZ"/>
                                 </constraints>
                                 <state key="normal" image="Ball"/>
+                                <connections>
+                                    <action selector="ballAction" destination="6JY-wC-gpp" eventType="touchUpInside" id="rKr-SQ-uLW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
