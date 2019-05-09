@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (4.8.2)
+  - Haneke (1.0.2)
+  - Moya (13.0.0):
+    - Moya/Core (= 13.0.0)
+  - Moya/Core (13.0.0):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Result (4.1.0)
+
+DEPENDENCIES:
+  - Haneke
+  - Moya
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Haneke
+    - Moya
+    - Result
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Haneke: 01454a67322faa0dd9d81fc0f447885044e71521
+  Moya: 161263550064ff8a4948e8ff63137fd72a876292
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+
+PODFILE CHECKSUM: d56e9f18f42a66dfd516e9e4e592ea1e7e3a2f76
+
+COCOAPODS: 1.6.1
