@@ -44,7 +44,14 @@ class Coordinator: Coordinating {
     }
     
     func showCatchScene() {
-        print("WARNING: Show catch not implemented")
+        guard let dataProvider = dataProvider else { return }
+        let viewController = CatchWireframe.makeViewController()
+        
+        CatchWireframe.prepare(viewController, actions: actions as CatchActions, dataProvider: dataProvider as CatchDataProvider)
+        
+        guard let topViewController = window.rootViewController else { return }
+        
+        topViewController.present(viewController, animated: true, completion: nil)
     }
     
     func showBackpackScene() {
