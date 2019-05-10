@@ -19,6 +19,7 @@ protocol DataProviding {
     init(service: ServiceProvider)
     
     func search(identifier: Int)
+    func catchPokemon()
 }
 
 class DataProvider: DataProviding {
@@ -61,4 +62,11 @@ class DataProvider: DataProviding {
             }
         }
     }
+    
+    func catchPokemon() {
+        guard let pokemon = appData.pokemon else { return }
+        let localPokemon = PokemonParser.parse(pokemon: pokemon)
+        appData.pokemons.append(localPokemon)
+    }
+    
 }
