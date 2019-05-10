@@ -138,8 +138,6 @@ extension Coordinator: Notifier {
             if let errorMessage = errorMessage {
                 self.showAlert(with: errorMessage)
             } else {
-                self.showAlert(with: "Success, Pokemon loaded.")
-                
                 self.presenter?.update()
             }
         }
