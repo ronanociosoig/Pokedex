@@ -72,6 +72,12 @@
 		AF4E3D5622857A3000760406 /* MockServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D5522857A3000760406 /* MockServiceProvider.swift */; };
 		AF4E3D58228586B600760406 /* AppDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D57228586B600760406 /* AppDataTests.swift */; };
 		AF4E3D5D2285B54D00760406 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D5C2285B54D00760406 /* Storage.swift */; };
+		AF4E3D652285C6C800760406 /* PokemonDetailActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D5F2285C6C800760406 /* PokemonDetailActions.swift */; };
+		AF4E3D662285C6C800760406 /* PokemonDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D602285C6C800760406 /* PokemonDetailPresenter.swift */; };
+		AF4E3D672285C6C800760406 /* PokemonDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4E3D612285C6C800760406 /* PokemonDetailViewController.storyboard */; };
+		AF4E3D682285C6C800760406 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D622285C6C800760406 /* PokemonDetailViewController.swift */; };
+		AF4E3D692285C6C800760406 /* PokemonDetailDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D632285C6C800760406 /* PokemonDetailDataProvider.swift */; };
+		AF4E3D6A2285C6C800760406 /* PokemonDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D642285C6C800760406 /* PokemonDetailWireframe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +171,12 @@
 		AF4E3D5522857A3000760406 /* MockServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServiceProvider.swift; sourceTree = "<group>"; };
 		AF4E3D57228586B600760406 /* AppDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataTests.swift; sourceTree = "<group>"; };
 		AF4E3D5C2285B54D00760406 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		AF4E3D5F2285C6C800760406 /* PokemonDetailActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailActions.swift; sourceTree = "<group>"; };
+		AF4E3D602285C6C800760406 /* PokemonDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailPresenter.swift; sourceTree = "<group>"; };
+		AF4E3D612285C6C800760406 /* PokemonDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PokemonDetailViewController.storyboard; sourceTree = "<group>"; };
+		AF4E3D622285C6C800760406 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
+		AF4E3D632285C6C800760406 /* PokemonDetailDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailDataProvider.swift; sourceTree = "<group>"; };
+		AF4E3D642285C6C800760406 /* PokemonDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailWireframe.swift; sourceTree = "<group>"; };
 		C8B78A14EDC1A0E65C57E59B /* Pods_Wefox_PokedexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wefox_PokedexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1B308C39390A11EEF4B44C /* Pods-Wefox PokedexUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wefox PokedexUITests.release.xcconfig"; path = "Target Support Files/Pods-Wefox PokedexUITests/Pods-Wefox PokedexUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FA10289127BDE80E2E3783EE /* Pods-Wefox PokedexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wefox PokedexTests.release.xcconfig"; path = "Target Support Files/Pods-Wefox PokedexTests/Pods-Wefox PokedexTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -304,6 +316,7 @@
 		AF4E3CE222844E6800760406 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				AF4E3D5E2285C69400760406 /* Pokemon Detail Scene */,
 				AF4E3D0E228476AA00760406 /* Backpack Scene */,
 				AF4E3D01228474B000760406 /* Catch Scene */,
 				AF4E3CF9228455E800760406 /* Home Scene */,
@@ -424,6 +437,19 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		AF4E3D5E2285C69400760406 /* Pokemon Detail Scene */ = {
+			isa = PBXGroup;
+			children = (
+				AF4E3D5F2285C6C800760406 /* PokemonDetailActions.swift */,
+				AF4E3D602285C6C800760406 /* PokemonDetailPresenter.swift */,
+				AF4E3D612285C6C800760406 /* PokemonDetailViewController.storyboard */,
+				AF4E3D622285C6C800760406 /* PokemonDetailViewController.swift */,
+				AF4E3D632285C6C800760406 /* PokemonDetailDataProvider.swift */,
+				AF4E3D642285C6C800760406 /* PokemonDetailWireframe.swift */,
+			);
+			path = "Pokemon Detail Scene";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -534,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF4E3D0A228474CC00760406 /* CatchViewController.storyboard in Resources */,
+				AF4E3D672285C6C800760406 /* PokemonDetailViewController.storyboard in Resources */,
 				AF4E3CF5228455E100760406 /* HomeViewController.storyboard in Resources */,
 				AF4E3CBE22844C2500760406 /* LaunchScreen.storyboard in Resources */,
 				AF4E3D2522847EC400760406 /* PokemonCollectionViewCell.xib in Resources */,
@@ -694,6 +721,7 @@
 				AF4E3D422284D12A00760406 /* Notifier.swift in Sources */,
 				AF4E3D19228476C800760406 /* BackpackDataSource.swift in Sources */,
 				AF4E3D08228474CC00760406 /* CatchActions.swift in Sources */,
+				AF4E3D652285C6C800760406 /* PokemonDetailActions.swift in Sources */,
 				AF4E3D502285742B00760406 /* Generator.swift in Sources */,
 				AF4E3D0B228474CC00760406 /* CatchViewController.swift in Sources */,
 				AF4E3CFB2284560800760406 /* Actions.swift in Sources */,
@@ -702,6 +730,7 @@
 				AF4E3D3022848AB500760406 /* PokemonSearchService.swift in Sources */,
 				AF4E3D17228476C800760406 /* BackpackActions.swift in Sources */,
 				AF4E3D382284B33900760406 /* MockData.swift in Sources */,
+				AF4E3D682285C6C800760406 /* PokemonDetailViewController.swift in Sources */,
 				AF4E3D442284D4F500760406 /* ScreenPokemon.swift in Sources */,
 				AF4E3CB622844C2200760406 /* ViewController.swift in Sources */,
 				AF4E3D3222848B6800760406 /* PokemonSearchEndpoint.swift in Sources */,
@@ -711,6 +740,7 @@
 				AF4E3CE822844E9900760406 /* DataProvider.swift in Sources */,
 				AF4E3D0C228474CC00760406 /* CatchDataProvider.swift in Sources */,
 				AF4E3CB422844C2200760406 /* AppDelegate.swift in Sources */,
+				AF4E3D692285C6C800760406 /* PokemonDetailDataProvider.swift in Sources */,
 				AF4E3D0D228474CC00760406 /* CatchWireframe.swift in Sources */,
 				AF4E3CEC22844EB400760406 /* Constants.swift in Sources */,
 				AF4E3CF8228455E100760406 /* HomeWireframe.swift in Sources */,
@@ -720,7 +750,9 @@
 				AF4E3CE422844E8200760406 /* AppController.swift in Sources */,
 				AF4E3D2422847EC400760406 /* PokemonCollectionViewCell.swift in Sources */,
 				AF4E3D482284DA3600760406 /* PokemonView.swift in Sources */,
+				AF4E3D662285C6C800760406 /* PokemonDetailPresenter.swift in Sources */,
 				AF4E3CF4228455E100760406 /* HomePresenter.swift in Sources */,
+				AF4E3D6A2285C6C800760406 /* PokemonDetailWireframe.swift in Sources */,
 				AF4E3CF3228455E100760406 /* HomeActions.swift in Sources */,
 				AF4E3CEA22844EA700760406 /* AppData.swift in Sources */,
 				AF4E3D09228474CC00760406 /* CatchPresenter.swift in Sources */,
