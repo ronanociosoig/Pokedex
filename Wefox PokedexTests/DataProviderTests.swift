@@ -8,26 +8,49 @@
 
 import XCTest
 
+// swiftlint:disable all
+
+@testable import Wefox_Pokedex
+
+enum PokemonId: Int {
+    case pokemon5 = 5
+    case pokemon12 = 12
+}
+
 class DataProviderTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testNewSpecies() {
+        let dataProvider = DataProvider(service: MockServiceProvider())
+        
+        let pokemon5 = loadPokemon(identifier: .pokemon5)
+        let pokemon12 = loadPokemon(identifier: .pokemon12)
+        
+        dataProvider.appData.pokemon = pokemon5
+        dataProvider.catchPokemon()
+        
+        var newSpecies = dataProvider.newSpecies()
+        
+        XCTAssertFalse(newSpecies)
+        
+        dataProvider.appData.pokemon = pokemon12
+        
+        newSpecies = dataProvider.newSpecies()
+        
+        XCTAssertTrue(newSpecies)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func loadPokemon(identifier: PokemonId) -> Pokemon {
+        let data: Data
+        
+        switch identifier {
+        case .pokemon5:
+            data = try! MockData.loadResponse()!
+        case .pokemon12:
+            data = try! MockData.loadOtherResponse()!
         }
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let pokemon = try! decoder.decode(Pokemon.self, from: data)
+        return pokemon
     }
-
 }
