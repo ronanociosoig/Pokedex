@@ -17,6 +17,10 @@ struct Constants {
         static let searchPath = "pokemon"
     }
     
+    struct Image {
+        static let pokemonPlaceholder = "PokemonPlaceholder"
+    }
+    
     struct Translations {
         static let loading = "Loading"
         static let ok = "OK"

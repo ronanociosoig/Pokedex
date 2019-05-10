@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haneke
 
 class BackpackDataSource: NSObject, UICollectionViewDataSource {
     
@@ -17,11 +18,21 @@ class BackpackDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        guard let presenter = presenter else { return 0 }
+        
+        return presenter.pokemons().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeue(cellType: PokemonCollectionViewCell.self, for: indexPath)
+        
+        guard let presenter = presenter else { return cell }
+        
+        cell.name.text = presenter.pokemonName(at: indexPath.item)
+        let imagePath = presenter.pokemonImagePath(at: indexPath.item)
+        guard let imageURL = URL(string: imagePath) else { return cell }
+        cell.imageView.hnk_setImage(from: imageURL, placeholder: UIImage(named: Constants.Image.pokemonPlaceholder))
+        
         return cell
     }
 }

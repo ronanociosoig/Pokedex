@@ -15,7 +15,11 @@ protocol BackpackView: class {
 protocol BackpackPresenting: class {
     var dataSource: BackpackDataSource { get }
     var delegate: BackpackDelegate { get }
+    
     func viewDidLoad()
+    func pokemons() -> [LocalPokemon]
+    func pokemonImagePath(at index: Int) -> String
+    func pokemonName(at index: Int) -> String
 }
 
 class BackpackPresenter: BackpackPresenting {
@@ -48,5 +52,17 @@ class BackpackPresenter: BackpackPresenting {
     
     func viewDidLoad() {
         view?.setDataSource(dataSource: dataSource)
+    }
+    
+    func pokemons() -> [LocalPokemon] {
+        return dataProvider.pokemons()
+    }
+    
+    func pokemonImagePath(at index: Int) -> String {
+        return pokemons()[index].spriteUrlString
+    }
+    
+    func pokemonName(at index: Int) -> String {
+        return pokemons()[index].name
     }
 }
