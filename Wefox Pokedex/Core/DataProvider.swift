@@ -21,6 +21,7 @@ protocol DataProviding {
     func search(identifier: Int)
     func catchPokemon()
     func newSpecies() -> Bool
+    func pokemon(at index: Int) -> LocalPokemon
 }
 
 class DataProvider: DataProviding {
@@ -81,5 +82,9 @@ class DataProvider: DataProviding {
     
     func newSpecies() -> Bool {
         return appData.newSpecies()
+    }
+    
+    func pokemon(at index: Int) -> LocalPokemon {
+        return appData.pokemons[index]
     }
 }
