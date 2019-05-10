@@ -40,7 +40,7 @@
                             <constraint firstItem="ODG-Sk-nvn" firstAttribute="bottom" secondItem="YzX-Yf-1Ql" secondAttribute="bottom" constant="46" id="Lmf-vs-wPf"/>
                             <constraint firstItem="sf1-cg-uKF" firstAttribute="top" secondItem="Ywu-gT-m6t" secondAttribute="top" id="UFT-Ev-VST"/>
                             <constraint firstItem="sf1-cg-uKF" firstAttribute="leading" secondItem="ODG-Sk-nvn" secondAttribute="leading" id="XEf-aR-tOk"/>
-                            <constraint firstItem="sf1-cg-uKF" firstAttribute="bottom" secondItem="ODG-Sk-nvn" secondAttribute="bottom" id="orC-nU-Ixw"/>
+                            <constraint firstItem="sf1-cg-uKF" firstAttribute="bottom" secondItem="Ywu-gT-m6t" secondAttribute="bottom" id="orC-nU-Ixw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ODG-Sk-nvn"/>
                     </view>
