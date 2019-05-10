@@ -22,6 +22,7 @@ protocol Coordinating {
     func showHomeScene()
     func showCatchScene()
     func showBackpackScene()
+    func showPokemonDetailScene(pokemon: LocalPokemon)
     func showAlert(with errorMessage: String)
 }
 
@@ -91,6 +92,16 @@ class Coordinator: Coordinating {
         topViewController.present(navigationController, animated: true, completion: nil)
         
         currentViewController = navigationController
+    }
+    
+    func showPokemonDetailScene(pokemon: LocalPokemon) {
+        let viewController = PokemonDetailWireframe.makeViewController()
+        
+        PokemonDetailWireframe.prepare(viewController, pokemon: pokemon)
+        
+        guard let topViewController = currentViewController as? UINavigationController else { return }
+        
+        topViewController.pushViewController(viewController, animated: true)
     }
     
     func showLoading() {
