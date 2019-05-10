@@ -27,8 +27,15 @@ struct Constants {
         }
         
         struct CatchScene {
-            static let weight = "Weight"
-            static let height = "Height"
+            static let weight = "WEIGHT"
+            static let height = "HEIGHT"
+            static let leaveOrCatchAlertMessageTitle = "Do you want to leave it or catch it?"
+            static let leaveItButtonTitle = "Leave it"
+            static let catchItButtonTitle = "Catch it!"
+            static let alreadyHaveItAlertMessageTitle = "You have already caught one of this species, you'll have to leave this one..."
+            
+            static let noPokemonFoundAlertTitle = "No Pokemon found, you will have to try again."
+            
         }
         
         struct BackpackScene {
