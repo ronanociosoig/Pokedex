@@ -9,6 +9,8 @@
 import Foundation
 
 class AppData {
+    static let pokemonFile = "pokemons.json"
+    
     var pokemon: Pokemon?
     var pokemons = [LocalPokemon]()
     
@@ -24,5 +26,15 @@ class AppData {
         }
         
         return foundSpecies.isEmpty
+    }
+    
+    func load() {
+        if Storage.fileExists(AppData.pokemonFile, in: .documents) {
+            pokemons = Storage.retrieve(AppData.pokemonFile, from: .documents, as: [LocalPokemon].self)
+        }
+    }
+    
+    func save() {
+        Storage.store(pokemons, to: .documents, as: AppData.pokemonFile)
     }
 }

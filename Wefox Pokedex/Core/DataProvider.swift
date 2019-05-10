@@ -30,6 +30,7 @@ class DataProvider: DataProviding {
     
     required init(service: ServiceProvider) {
         self.networkService = service
+        appData.load()
     }
     
     func search(identifier: Int) {
@@ -75,6 +76,7 @@ class DataProvider: DataProviding {
         guard let pokemon = appData.pokemon else { return }
         let localPokemon = PokemonParser.parse(pokemon: pokemon)
         appData.pokemons.append(localPokemon)
+        appData.save()
     }
     
     func newSpecies() -> Bool {
