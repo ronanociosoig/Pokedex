@@ -37,4 +37,10 @@ class AppData {
     func save() {
         Storage.store(pokemons, to: .documents, as: AppData.pokemonFile)
     }
+    
+    func sortByOrder() {
+        pokemons.sort(by: {
+            $0.order > $1.order
+        })
+    }
 }

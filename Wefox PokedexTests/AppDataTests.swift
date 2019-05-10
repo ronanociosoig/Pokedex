@@ -53,4 +53,27 @@ class AppDataTests: XCTestCase {
         let pokemon = try! decoder.decode(Pokemon.self, from: data)
         return pokemon
     }
+    
+    func testSortByOrder() {
+        let appData = AppData()
+        let pokemon5 = loadPokemon(identifier: .pokemon5)
+        let pokemon12 = loadPokemon(identifier: .pokemon12)
+        let localPokemon5 = PokemonParser.parse(pokemon: pokemon5)
+        let localPokemon12 = PokemonParser.parse(pokemon: pokemon12)
+        appData.pokemons.append(localPokemon5)
+        appData.pokemons.append(localPokemon12)
+        
+        appData.sortByOrder()
+        
+        guard let firstItem = appData.pokemons.first else {
+            XCTFail("Failed to parse data")
+            return
+        }
+        guard let lastItem = appData.pokemons.last else {
+            XCTFail("Failed to parse data")
+            return
+        }
+        
+        XCTAssertTrue(firstItem.order < lastItem.order)
+    }
 }
