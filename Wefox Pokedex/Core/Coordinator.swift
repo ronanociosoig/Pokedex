@@ -39,6 +39,8 @@ class Coordinator: Coordinating {
     }
     
     func start() {
+        actions.dataProvider = dataProvider
+        
         showHomeScene()
     }
     
