@@ -18,7 +18,7 @@ protocol BackpackPresenting: class {
     
     func viewDidLoad()
     func pokemons() -> [LocalPokemon]
-    func pokemonImagePath(at index: Int) -> String
+    func pokemonImagePath(at index: Int) -> String?
     func pokemonName(at index: Int) -> String
 }
 
@@ -58,7 +58,7 @@ class BackpackPresenter: BackpackPresenting {
         return dataProvider.pokemons()
     }
     
-    func pokemonImagePath(at index: Int) -> String {
+    func pokemonImagePath(at index: Int) -> String? {
         return pokemons()[index].spriteUrlString
     }
     

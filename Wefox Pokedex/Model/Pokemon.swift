@@ -71,7 +71,7 @@ struct Sprites: Codable {
     let backFemale: String?
     let backShiny: String?
     let backShinyFemale: String?
-    let frontDefault: String
+    let frontDefault: String?
     let frontFemale: String?
     let frontShiny: String?
     let frontShinyFemale: String?

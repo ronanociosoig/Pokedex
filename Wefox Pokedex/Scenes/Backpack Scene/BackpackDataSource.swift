@@ -29,7 +29,10 @@ class BackpackDataSource: NSObject, UICollectionViewDataSource {
         guard let presenter = presenter else { return cell }
         
         cell.name.text = presenter.pokemonName(at: indexPath.item)
-        let imagePath = presenter.pokemonImagePath(at: indexPath.item)
+        guard let imagePath = presenter.pokemonImagePath(at: indexPath.item) else {
+            return cell
+        }
+        
         guard let imageURL = URL(string: imagePath) else { return cell }
         cell.imageView.hnk_setImage(from: imageURL, placeholder: UIImage(named: Constants.Image.pokemonPlaceholder))
         

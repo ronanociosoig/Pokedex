@@ -13,7 +13,7 @@ struct LocalPokemon: Codable {
     let weight: Int
     let height: Int
     let order: Int
-    let spriteUrlString: String
+    let spriteUrlString: String?
     let date: Date
     let species: String
     let baseExperience: Int
