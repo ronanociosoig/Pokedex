@@ -6,18 +6,16 @@
 //  Copyright © 2019 Sonomos. All rights reserved.
 //
 
-import XCTest
-
 // swiftlint:disable all
+
+import XCTest
 
 @testable import Wefox_Pokedex
 
-
-
 class AppDataTests: XCTestCase {
     enum PokemonId: Int {
-        case pokemon5 = 5
-        case pokemon12 = 12
+        case pokemon5
+        case pokemon12
     }
     
     func testNewSpecies() {
