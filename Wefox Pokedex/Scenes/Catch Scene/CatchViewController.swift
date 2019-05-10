@@ -57,13 +57,13 @@ extension CatchViewController: CatchView {
                                                 preferredStyle: .alert)
         
         let leaveButton = UIAlertAction(title: Constants.Translations.CatchScene.leaveItButtonTitle,
-                                     style: .default,
-                                     handler: nil)
+                                        style: .default) { _ in
+                                            self.leavePokemonAction()
+        }
         
         let catchButton = UIAlertAction(title: Constants.Translations.CatchScene.catchItButtonTitle,
                                         style: .default,
                                         handler: nil)
-        
         
         alertController.addAction(leaveButton)
         alertController.addAction(catchButton)
@@ -78,8 +78,9 @@ extension CatchViewController: CatchView {
                                                 preferredStyle: .alert)
         
         let leaveButton = UIAlertAction(title: Constants.Translations.CatchScene.leaveItButtonTitle,
-                                        style: .default,
-                                        handler: nil)
+                                        style: .default) { _ in
+                                            self.leavePokemonAction()
+        }
         
         alertController.addAction(leaveButton)
         present(alertController,
