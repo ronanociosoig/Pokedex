@@ -6,6 +6,8 @@
 //  Copyright © 2019 Sonomos. All rights reserved.
 //
 
+import Foundation
+
 protocol PokemonDetailView: class {
     func setPokemon(name: String)
 }
@@ -17,6 +19,7 @@ protocol PokemonDetailPresenting: class {
     func imagePath() -> String?
     
     func baseExperience() -> String
+    func date() -> String
 }
 
 class PokemonDetailPresenter: PokemonDetailPresenting {
@@ -51,6 +54,12 @@ class PokemonDetailPresenter: PokemonDetailPresenting {
     
     func baseExperience() -> String {
         return "\(Constants.Translations.DetailScene.experience): \(pokemon.baseExperience)"
+    }
+    
+    func date() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/mm/yyyy HH:MM"
+        return formatter.string(from: pokemon.date)
     }
     
 }
