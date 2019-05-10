@@ -10,6 +10,7 @@ protocol CatchView: class {
     func update()
     func showLeaveOrCatchAlert()
     func showLeaveItAlert()
+    func showNotFoundAlert()
 }
 
 protocol CatchPresenting: class {
@@ -46,6 +47,11 @@ class CatchPresenter: CatchPresenting, Updatable {
     func update() {
         guard let view = view else { return }
         view.update()
+        
+        if pokemon() == nil {
+            view.showNotFoundAlert()
+            return
+        }
         
         dataProvider.newSpecies() ? view.showLeaveOrCatchAlert() : view.showLeaveItAlert()
     }

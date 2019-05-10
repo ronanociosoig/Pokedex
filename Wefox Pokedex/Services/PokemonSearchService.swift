@@ -43,6 +43,12 @@ class PokemonSearchService: PokemonSearchLoadingService {
         provider.request(.search(identifier: identifier)) { result in
             switch result {
             case .success(let response):
+                
+                if response.statusCode == 404 {
+                    completion(nil, Constants.Translations.Error.statusCode404)
+                    return
+                }
+
                 completion(response.data, nil)
             case .failure(let error):
                 completion(nil, error.localizedDescription)

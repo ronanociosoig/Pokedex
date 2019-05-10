@@ -141,6 +141,10 @@ extension Coordinator: Notifier {
             self.dismissLoading()
             
             if let errorMessage = errorMessage {
+                if errorMessage == Constants.Translations.Error.statusCode404 {
+                    self.presenter?.update()
+                    return
+                }
                 self.showAlert(with: errorMessage)
             } else {
                 self.presenter?.update()

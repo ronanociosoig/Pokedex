@@ -35,10 +35,17 @@ class DataProvider: DataProviding {
     func search(identifier: Int) {
         let searchService = networkService.makePokemonService()
         
+        appData.pokemon = nil
+        
         searchService.search(identifier: identifier) { (data, errorMessage) in
             let queue = DispatchQueue.main
             
             if let errorMessage = errorMessage {
+                if errorMessage == Constants.Translations.Error.statusCode404 {
+                    self.notifier?.dataReceived(errorMessage: errorMessage, on: queue)
+                    return
+                }
+                
                 os_log("Error message: %s", log: Log.network, type: .error, errorMessage)
                 return
             }
