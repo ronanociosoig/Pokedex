@@ -40,4 +40,8 @@ class MockData {
     static func loadResponse() throws -> Data? {
         return try load(name: "Pokemon5")
     }
+    
+    static func loadOtherResponse() throws -> Data? {
+        return try load(name: "Pokemon12")
+    }
 }
