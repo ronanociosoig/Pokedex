@@ -27,9 +27,9 @@ class BackpackPresenter: BackpackPresenting {
     
     // MARK: Properties
     
-    weak var view: BackpackView?
-    var actions: BackpackActions
-    var dataProvider: BackpackDataProvider
+    private weak var view: BackpackView?
+    private var actions: BackpackActions
+    private var dataProvider: BackpackDataProvider
     var dataSource: BackpackDataSource
     var delegate: BackpackDelegate
     

@@ -11,7 +11,7 @@ import Haneke
 
 class CatchViewController: UIViewController {
     var presenter: CatchPresenting?
-    var pokemonView: PokemonView?
+    private var pokemonView: PokemonView?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -20,9 +20,9 @@ class HomePresenter: HomePresenting {
     
     // MARK: Properties
     
-    weak var view: HomeView?
-    var actions: HomeActions
-    var dataProvider: HomeDataProvider
+    private weak var view: HomeView?
+    private var actions: HomeActions
+    private var dataProvider: HomeDataProvider
     
     // MARK: Typealias
     

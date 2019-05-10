@@ -27,7 +27,7 @@ protocol DataProviding {
 class DataProvider: DataProviding {
     let appData = AppData()
     var notifier: Notifier?
-    let networkService: ServiceProvider
+    private let networkService: ServiceProvider
     
     required init(service: ServiceProvider) {
         self.networkService = service

@@ -12,7 +12,7 @@ import Haneke
 class PokemonDetailViewController: UIViewController {
     var presenter: PokemonDetailPresenting?
     
-    var pokemonView: PokemonView?
+    private var pokemonView: PokemonView?
     
     override func viewDidLoad() {
         guard let pokemonView = PokemonView.loadFromNib() else { return }

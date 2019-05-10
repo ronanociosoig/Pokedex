@@ -23,10 +23,9 @@ class CatchPresenter: CatchPresenting, Updatable {
     
     // MARK: Properties
     
-    weak var view: CatchView?
-    var actions: CatchActions
-    
-    var dataProvider: CatchDataProvider
+    private weak var view: CatchView?
+    private var actions: CatchActions
+    private var dataProvider: CatchDataProvider
     
     // MARK: Typealias
     
