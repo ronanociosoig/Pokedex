@@ -40,7 +40,7 @@ class AppData {
     
     func sortByOrder() {
         pokemons.sort(by: {
-            $0.order > $1.order
+            $0.order < $1.order
         })
     }
 }
