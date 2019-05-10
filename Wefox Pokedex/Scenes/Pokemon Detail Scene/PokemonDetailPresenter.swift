@@ -7,18 +7,22 @@
 //
 
 protocol PokemonDetailView: class {
-    
+    func setPokemon(name: String)
 }
 
 protocol PokemonDetailPresenting: class {
-    func viewDidLoad()
+    func weight() -> String
+    func name() -> String
+    func height() -> String
+    func imagePath() -> String?
+    
 }
 
 class PokemonDetailPresenter: PokemonDetailPresenting {
     
     // MARK: Properties
-    let pokemon: LocalPokemon
-    weak var view: PokemonDetailView?
+    private let pokemon: LocalPokemon
+    private weak var view: PokemonDetailView?
 
     // MARK: Typealias
     typealias View = PokemonDetailView
@@ -28,7 +32,19 @@ class PokemonDetailPresenter: PokemonDetailPresenting {
         self.pokemon = pokemon
     }
     
-    func viewDidLoad() {
+    func weight() -> String {
+        return "\(Constants.Translations.DetailScene.weight): \(pokemon.weight)"
+    }
     
+    func height() -> String {
+        return "\(Constants.Translations.DetailScene.height): \(pokemon.height)"
+    }
+    
+    func name() -> String {
+        return pokemon.name
+    }
+    
+    func imagePath() -> String? {
+        return pokemon.spriteUrlString
     }
 }
