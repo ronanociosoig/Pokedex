@@ -52,6 +52,7 @@ struct Constants {
             static let height = "Height"
             static let date = "Date"
             static let experience = "Experience"
+            static let types = "Types"
         }
         
         struct Error {
