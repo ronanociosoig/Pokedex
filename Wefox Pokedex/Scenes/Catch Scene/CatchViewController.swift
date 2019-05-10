@@ -36,17 +36,54 @@ extension CatchViewController: CatchView {
         pokemonView.name.text = screenPokemon.name
         pokemonView.height.text = "Height: \(screenPokemon.height)"
         pokemonView.weight.text = "Weight: \(screenPokemon.weight)"
+        
         view.addSubview(pokemonView)
+        
         guard let path = screenPokemon.iconPath else { return }
         guard let imageURL = URL(string: path) else { return }
         
         pokemonView.imageView.hnk_setImage(from: imageURL)
         pokemonView.backgroundColor = UIColor.clear
-        
         pokemonView.center = view.center
     }
     
     func leavePokemonAction() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func showLeaveOrCatchAlert() {
+        let alertController = UIAlertController(title: Constants.Translations.CatchScene.leaveOrCatchAlertMessageTitle,
+                                                message: nil,
+                                                preferredStyle: .alert)
+        
+        let leaveButton = UIAlertAction(title: Constants.Translations.CatchScene.leaveItButtonTitle,
+                                     style: .default,
+                                     handler: nil)
+        
+        let catchButton = UIAlertAction(title: Constants.Translations.CatchScene.catchItButtonTitle,
+                                        style: .default,
+                                        handler: nil)
+        
+        
+        alertController.addAction(leaveButton)
+        alertController.addAction(catchButton)
+        present(alertController,
+                               animated: true,
+                               completion: nil)
+    }
+    
+    func showLeaveItAlert() {
+        let alertController = UIAlertController(title: Constants.Translations.CatchScene.alreadyHaveItAlertMessageTitle,
+                                                message: nil,
+                                                preferredStyle: .alert)
+        
+        let leaveButton = UIAlertAction(title: Constants.Translations.CatchScene.leaveItButtonTitle,
+                                        style: .default,
+                                        handler: nil)
+        
+        alertController.addAction(leaveButton)
+        present(alertController,
+                animated: true,
+                completion: nil)
     }
 }

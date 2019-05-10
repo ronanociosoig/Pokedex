@@ -10,6 +10,7 @@ import Foundation
 
 protocol CatchDataProvider {
     func pokemon() -> ScreenPokemon?
+    func newSpecies() -> Bool
 }
 
 extension DataProvider: CatchDataProvider {

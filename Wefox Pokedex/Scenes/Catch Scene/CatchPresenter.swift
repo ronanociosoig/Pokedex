@@ -8,6 +8,8 @@
 
 protocol CatchView: class {
     func update()
+    func showLeaveOrCatchAlert()
+    func showLeaveItAlert()
 }
 
 protocol CatchPresenting: class {
@@ -42,7 +44,10 @@ class CatchPresenter: CatchPresenting, Updatable {
     }
     
     func update() {
-        view?.update()
+        guard let view = view else { return }
+        view.update()
+        
+        dataProvider.newSpecies() ? view.showLeaveOrCatchAlert() : view.showLeaveItAlert()
     }
     
     func pokemon() -> ScreenPokemon? {
