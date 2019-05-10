@@ -21,7 +21,8 @@ class CatchViewController: UIViewController {
     
     @IBAction func ballAction() {
         dismiss(animated: true) {
-            // add the Pokemon to the backpack and store it.
+            guard let presenter = self.presenter else { return }
+            presenter.catchPokemonAction()
         }
     }
 }
@@ -43,5 +44,9 @@ extension CatchViewController: CatchView {
         pokemonView.backgroundColor = UIColor.clear
         
         pokemonView.center = view.center
+    }
+    
+    func leavePokemonAction() {
+        dismiss(animated: true, completion: nil)
     }
 }

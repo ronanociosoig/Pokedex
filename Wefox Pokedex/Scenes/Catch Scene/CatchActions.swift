@@ -7,9 +7,11 @@
 //
 
 protocol CatchActions {
-
+    func catchPokemon()
 }
 
 extension Actions: CatchActions {
-    
+    func catchPokemon() {
+        dataProvider?.catchPokemon()
+    }
 }
