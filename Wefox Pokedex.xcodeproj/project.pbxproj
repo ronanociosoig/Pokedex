@@ -66,6 +66,8 @@
 		AF4E3D4A2284DA4800760406 /* PokemonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF4E3D492284DA4800760406 /* PokemonView.xib */; };
 		AF4E3D4C22856C6000760406 /* PokemonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D4B22856C6000760406 /* PokemonParser.swift */; };
 		AF4E3D4E22856D3800760406 /* PokemonParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D4D22856D3800760406 /* PokemonParserTests.swift */; };
+		AF4E3D502285742B00760406 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D4F2285742B00760406 /* Generator.swift */; };
+		AF4E3D52228577C300760406 /* GeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D51228577C300760406 /* GeneratorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +155,8 @@
 		AF4E3D492284DA4800760406 /* PokemonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonView.xib; sourceTree = "<group>"; };
 		AF4E3D4B22856C6000760406 /* PokemonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonParser.swift; sourceTree = "<group>"; };
 		AF4E3D4D22856D3800760406 /* PokemonParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonParserTests.swift; sourceTree = "<group>"; };
+		AF4E3D4F2285742B00760406 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		AF4E3D51228577C300760406 /* GeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorTests.swift; sourceTree = "<group>"; };
 		C8B78A14EDC1A0E65C57E59B /* Pods_Wefox_PokedexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wefox_PokedexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1B308C39390A11EEF4B44C /* Pods-Wefox PokedexUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wefox PokedexUITests.release.xcconfig"; path = "Target Support Files/Pods-Wefox PokedexUITests/Pods-Wefox PokedexUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FA10289127BDE80E2E3783EE /* Pods-Wefox PokedexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wefox PokedexTests.release.xcconfig"; path = "Target Support Files/Pods-Wefox PokedexTests/Pods-Wefox PokedexTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 				AF4E3CC822844C2500760406 /* Wefox_PokedexTests.swift */,
 				AF4E3CCA22844C2500760406 /* Info.plist */,
 				AF4E3D4D22856D3800760406 /* PokemonParserTests.swift */,
+				AF4E3D51228577C300760406 /* GeneratorTests.swift */,
 			);
 			path = "Wefox PokedexTests";
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				AF4E3D2C22848A0300760406 /* Pokemon.swift */,
 				AF4E3D432284D4F500760406 /* ScreenPokemon.swift */,
 				AF4E3D4B22856C6000760406 /* PokemonParser.swift */,
+				AF4E3D4F2285742B00760406 /* Generator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -668,6 +674,7 @@
 				AF4E3D422284D12A00760406 /* Notifier.swift in Sources */,
 				AF4E3D19228476C800760406 /* BackpackDataSource.swift in Sources */,
 				AF4E3D08228474CC00760406 /* CatchActions.swift in Sources */,
+				AF4E3D502285742B00760406 /* Generator.swift in Sources */,
 				AF4E3D0B228474CC00760406 /* CatchViewController.swift in Sources */,
 				AF4E3CFB2284560800760406 /* Actions.swift in Sources */,
 				AF4E3D1B228476C800760406 /* BackpackViewController.swift in Sources */,
@@ -708,6 +715,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF4E3CC922844C2500760406 /* Wefox_PokedexTests.swift in Sources */,
+				AF4E3D52228577C300760406 /* GeneratorTests.swift in Sources */,
 				AF4E3D372284B16000760406 /* MockData.swift in Sources */,
 				AF4E3D4E22856D3800760406 /* PokemonParserTests.swift in Sources */,
 			);
