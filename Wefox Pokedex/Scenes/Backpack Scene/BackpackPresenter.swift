@@ -20,6 +20,7 @@ protocol BackpackPresenting: class {
     func pokemons() -> [LocalPokemon]
     func pokemonImagePath(at index: Int) -> String?
     func pokemonName(at index: Int) -> String
+    func selectItem(at index: Int)
 }
 
 class BackpackPresenter: BackpackPresenting {
@@ -64,5 +65,9 @@ class BackpackPresenter: BackpackPresenting {
     
     func pokemonName(at index: Int) -> String {
         return pokemons()[index].name
+    }
+    
+    func selectItem(at index: Int) {
+        actions.selectItem(at: index)
     }
 }
