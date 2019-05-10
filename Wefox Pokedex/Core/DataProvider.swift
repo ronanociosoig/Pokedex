@@ -71,16 +71,6 @@ class DataProvider: DataProviding {
     }
     
     func newSpecies() -> Bool {
-        guard let pokemon = appData.pokemon else { return false }
-        
-        if appData.pokemons.isEmpty {
-            return true
-        }
-        
-        let foundSpecies = appData.pokemons.filter {
-            $0.species == pokemon.species.name
-        }
-        
-        return foundSpecies.isEmpty
+        return appData.newSpecies()
     }
 }

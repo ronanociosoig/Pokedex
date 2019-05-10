@@ -11,4 +11,18 @@ import Foundation
 class AppData {
     var pokemon: Pokemon?
     var pokemons = [LocalPokemon]()
+    
+    func newSpecies() -> Bool {
+        guard let pokemon = pokemon else { return false }
+        
+        if pokemons.isEmpty {
+            return true
+        }
+        
+        let foundSpecies = pokemons.filter {
+            $0.species == pokemon.species.name
+        }
+        
+        return foundSpecies.isEmpty
+    }
 }

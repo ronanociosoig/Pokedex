@@ -70,6 +70,7 @@
 		AF4E3D52228577C300760406 /* GeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D51228577C300760406 /* GeneratorTests.swift */; };
 		AF4E3D542285791E00760406 /* DataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D532285791E00760406 /* DataProviderTests.swift */; };
 		AF4E3D5622857A3000760406 /* MockServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D5522857A3000760406 /* MockServiceProvider.swift */; };
+		AF4E3D58228586B600760406 /* AppDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D57228586B600760406 /* AppDataTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,7 @@
 		AF4E3D51228577C300760406 /* GeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorTests.swift; sourceTree = "<group>"; };
 		AF4E3D532285791E00760406 /* DataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTests.swift; sourceTree = "<group>"; };
 		AF4E3D5522857A3000760406 /* MockServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServiceProvider.swift; sourceTree = "<group>"; };
+		AF4E3D57228586B600760406 /* AppDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataTests.swift; sourceTree = "<group>"; };
 		C8B78A14EDC1A0E65C57E59B /* Pods_Wefox_PokedexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wefox_PokedexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1B308C39390A11EEF4B44C /* Pods-Wefox PokedexUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wefox PokedexUITests.release.xcconfig"; path = "Target Support Files/Pods-Wefox PokedexUITests/Pods-Wefox PokedexUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FA10289127BDE80E2E3783EE /* Pods-Wefox PokedexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wefox PokedexTests.release.xcconfig"; path = "Target Support Files/Pods-Wefox PokedexTests/Pods-Wefox PokedexTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				AF4E3D4D22856D3800760406 /* PokemonParserTests.swift */,
 				AF4E3D51228577C300760406 /* GeneratorTests.swift */,
 				AF4E3D532285791E00760406 /* DataProviderTests.swift */,
+				AF4E3D57228586B600760406 /* AppDataTests.swift */,
 			);
 			path = "Wefox PokedexTests";
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				AF4E3CC922844C2500760406 /* Wefox_PokedexTests.swift in Sources */,
 				AF4E3D52228577C300760406 /* GeneratorTests.swift in Sources */,
 				AF4E3D372284B16000760406 /* MockData.swift in Sources */,
+				AF4E3D58228586B600760406 /* AppDataTests.swift in Sources */,
 				AF4E3D542285791E00760406 /* DataProviderTests.swift in Sources */,
 				AF4E3D4E22856D3800760406 /* PokemonParserTests.swift in Sources */,
 			);
