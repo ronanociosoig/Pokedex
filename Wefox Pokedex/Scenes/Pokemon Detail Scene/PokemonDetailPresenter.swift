@@ -17,21 +17,15 @@ protocol PokemonDetailPresenting: class {
 class PokemonDetailPresenter: PokemonDetailPresenting {
     
     // MARK: Properties
-    
+    let pokemon: LocalPokemon
     weak var view: PokemonDetailView?
-    var actions: PokemonDetailActions
-    var dataProvider: PokemonDetailDataProvider
-    
+
     // MARK: Typealias
-    
-    typealias Actions = PokemonDetailActions
-    typealias DataProvider = PokemonDetailDataProvider
     typealias View = PokemonDetailView
     
-    required init(view: PokemonDetailView, actions: PokemonDetailActions, dataProvider: PokemonDetailDataProvider) {
+    required init(view: PokemonDetailView, pokemon: LocalPokemon) {
         self.view = view
-        self.actions = actions
-        self.dataProvider = dataProvider
+        self.pokemon = pokemon
     }
     
     func viewDidLoad() {

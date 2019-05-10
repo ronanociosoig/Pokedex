@@ -15,8 +15,8 @@ class PokemonDetailWireframe {
         return PokemonDetailViewController.instantiateFromStoryboard(storyboard: storyboard)
     }
     
-    static func prepare(_ viewController: PokemonDetailViewController, actions: PokemonDetailActions, dataProvider: PokemonDetailDataProvider) {
-    	let presenter =  PokemonDetailPresenter(view: viewController, actions: actions, dataProvider: dataProvider)
+    static func prepare(_ viewController: PokemonDetailViewController, pokemon: LocalPokemon) {
+    	let presenter =  PokemonDetailPresenter(view: viewController, pokemon: pokemon)
         viewController.presenter = presenter
     }
     
