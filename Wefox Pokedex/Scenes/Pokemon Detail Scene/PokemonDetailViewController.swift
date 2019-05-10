@@ -49,6 +49,9 @@ class PokemonDetailViewController: UIViewController {
         pokemonView.date.isHidden = false
         pokemonView.date.text = presenter.date()
         
+        pokemonView.types.isHidden = false
+        pokemonView.types.text = presenter.types()
+        
         title = presenter.name().capitalized
 
         guard let imagePath = presenter.imagePath() else { return }

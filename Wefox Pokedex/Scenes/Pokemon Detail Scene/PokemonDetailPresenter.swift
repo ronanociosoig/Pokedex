@@ -17,9 +17,9 @@ protocol PokemonDetailPresenting: class {
     func name() -> String
     func height() -> String
     func imagePath() -> String?
-    
     func baseExperience() -> String
     func date() -> String
+    func types() -> String
 }
 
 class PokemonDetailPresenter: PokemonDetailPresenting {
@@ -62,4 +62,12 @@ class PokemonDetailPresenter: PokemonDetailPresenting {
         return formatter.string(from: pokemon.date)
     }
     
+    func types() -> String {
+        var allTypes: String = Constants.Translations.DetailScene.types + ": "
+        for type in pokemon.types {
+            allTypes.append(type.capitalized)
+            allTypes.append(", ")
+        }
+        return allTypes
+    }
 }
