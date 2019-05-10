@@ -43,6 +43,9 @@ class PokemonDetailViewController: UIViewController {
         pokemonView.height.text = presenter.height()
         pokemonView.name.text = ""
         
+        pokemonView.experience.isHidden = false
+        pokemonView.experience.text = presenter.baseExperience()
+        
         title = presenter.name().capitalized
 
         guard let imagePath = presenter.imagePath() else { return }

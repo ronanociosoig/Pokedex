@@ -16,6 +16,7 @@ protocol PokemonDetailPresenting: class {
     func height() -> String
     func imagePath() -> String?
     
+    func baseExperience() -> String
 }
 
 class PokemonDetailPresenter: PokemonDetailPresenting {
@@ -47,4 +48,9 @@ class PokemonDetailPresenter: PokemonDetailPresenting {
     func imagePath() -> String? {
         return pokemon.spriteUrlString
     }
+    
+    func baseExperience() -> String {
+        return "\(Constants.Translations.DetailScene.experience): \(pokemon.baseExperience)"
+    }
+    
 }
