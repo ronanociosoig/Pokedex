@@ -67,13 +67,13 @@ struct VersionGroupDetail: Codable {
 }
 
 struct Sprites: Codable {
-    let backDefault: String
+    let backDefault: String?
     let backFemale: String?
-    let backShiny: String
+    let backShiny: String?
     let backShinyFemale: String?
     let frontDefault: String
     let frontFemale: String?
-    let frontShiny: String
+    let frontShiny: String?
     let frontShinyFemale: String?
 }
 
