@@ -33,7 +33,9 @@ class PokemonSearchService: PokemonSearchLoadingService {
         //if Configuration.networkTesting {
         //    return MoyaProvider<PokemonSearchEndpoint>(plugins: [NetworkLoggerPlugin(verbose: true)])
         //} else {
-        return MoyaProvider<PokemonSearchEndpoint>(callbackQueue: DispatchQueue.global(qos: .background))
+        return MoyaProvider<PokemonSearchEndpoint>(plugins: [NetworkLoggerPlugin(verbose: true)])
+        
+        //(callbackQueue: DispatchQueue.global(qos: .background))
         //}
     }
     
