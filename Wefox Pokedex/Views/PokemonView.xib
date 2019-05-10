@@ -41,6 +41,33 @@
                         <constraint firstAttribute="width" constant="96" id="vHV-uJ-YNl"/>
                     </constraints>
                 </imageView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Base experience" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2e-th-XcH">
+                    <rect key="frame" x="16" y="228" width="293" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Mvl-vx-T4x"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3w1-MX-Lvw">
+                    <rect key="frame" x="16" y="257" width="293" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="gvw-07-ph6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Types" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAo-aN-fg2">
+                    <rect key="frame" x="16" y="286" width="293" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="kcX-jx-UhC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3S-B5-eSg">
                     <rect key="frame" x="168" y="190" width="141" height="21"/>
                     <constraints>
@@ -56,21 +83,33 @@
             <constraints>
                 <constraint firstItem="GnN-4G-HBg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="2wK-7O-dRF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="S3S-B5-eSg" secondAttribute="trailing" constant="16" id="3Mm-dW-JCo"/>
+                <constraint firstItem="w2e-th-XcH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="3iX-xn-TWa"/>
+                <constraint firstItem="3w1-MX-Lvw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="406-W4-ShF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="w2e-th-XcH" secondAttribute="trailing" constant="16" id="5uN-Py-q0i"/>
                 <constraint firstItem="GnN-4G-HBg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6xu-vA-7ry"/>
                 <constraint firstItem="G72-AD-neP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="8fn-KT-W8o"/>
                 <constraint firstItem="G72-AD-neP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="F3S-yN-MWS"/>
+                <constraint firstItem="hAo-aN-fg2" firstAttribute="top" secondItem="3w1-MX-Lvw" secondAttribute="bottom" constant="8" id="FRs-i6-dZj"/>
                 <constraint firstItem="S3S-B5-eSg" firstAttribute="leading" secondItem="v25-3w-EhK" secondAttribute="trailing" constant="14" id="FnH-tj-TAy"/>
                 <constraint firstItem="v25-3w-EhK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Kr3-YR-XaS"/>
+                <constraint firstItem="hAo-aN-fg2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="O5j-Bf-M8c"/>
                 <constraint firstItem="v25-3w-EhK" firstAttribute="top" secondItem="GnN-4G-HBg" secondAttribute="bottom" constant="20" id="PMw-Ig-7Nj"/>
+                <constraint firstItem="w2e-th-XcH" firstAttribute="top" secondItem="v25-3w-EhK" secondAttribute="bottom" constant="17" id="Shc-8m-bJL"/>
                 <constraint firstItem="S3S-B5-eSg" firstAttribute="top" secondItem="GnN-4G-HBg" secondAttribute="bottom" constant="20" id="lyk-9q-9wC"/>
                 <constraint firstAttribute="trailing" secondItem="G72-AD-neP" secondAttribute="trailing" constant="16" id="mAl-YM-tdT"/>
+                <constraint firstItem="3w1-MX-Lvw" firstAttribute="top" secondItem="w2e-th-XcH" secondAttribute="bottom" constant="8" id="mMY-ZZ-65k"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3w1-MX-Lvw" secondAttribute="trailing" constant="16" id="oNE-Pl-Wxc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hAo-aN-fg2" secondAttribute="trailing" constant="16" id="ySG-eq-Dfz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="date" destination="3w1-MX-Lvw" id="nbu-Uc-gwt"/>
+                <outlet property="experience" destination="w2e-th-XcH" id="4IG-FC-3RB"/>
                 <outlet property="height" destination="v25-3w-EhK" id="X5l-W7-ZwL"/>
                 <outlet property="imageView" destination="GnN-4G-HBg" id="ePh-wf-ejk"/>
                 <outlet property="name" destination="G72-AD-neP" id="Ip2-JB-efb"/>
+                <outlet property="types" destination="hAo-aN-fg2" id="9JX-4n-3KX"/>
                 <outlet property="weight" destination="S3S-B5-eSg" id="XLz-0W-erz"/>
             </connections>
             <point key="canvasLocation" x="73.188405797101453" y="-40.178571428571423"/>
