@@ -23,6 +23,8 @@ class NetworkService: ServiceProvider {
 }
 
 protocol PokemonSearchLoadingService: class {
+    var provider: MoyaProvider<PokemonSearchEndpoint> { get }
+    
     func search(identifier: Int, completion: @escaping (_ data: Data?, _ error: String?) -> Void)
 }
 
