@@ -13,15 +13,6 @@ import XCTest
 @testable import Wefox_Pokedex
 
 class PokemonParserTests: XCTestCase {
-    
-    override func setUp() {
-        
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testParsing() {
         let data = try! MockData.loadResponse()
         

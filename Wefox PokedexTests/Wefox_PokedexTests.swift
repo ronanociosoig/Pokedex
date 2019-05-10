@@ -13,15 +13,6 @@ import XCTest
 @testable import Wefox_Pokedex
 
 class Wefox_PokedexTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testEndpointReturnsData() {
         
         let expectation = self.expectation(description: "No results in response data")
