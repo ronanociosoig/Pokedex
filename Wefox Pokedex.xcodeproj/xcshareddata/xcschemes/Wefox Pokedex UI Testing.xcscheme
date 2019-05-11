@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Wefox Pokedex.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AF4E3CCE22844C2500760406"
+               BuildableName = "Wefox PokedexUITests.xctest"
+               BlueprintName = "Wefox PokedexUITests"
+               ReferencedContainer = "container:Wefox Pokedex.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -28,6 +42,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AF4E3CCE22844C2500760406"
+               BuildableName = "Wefox PokedexUITests.xctest"
+               BlueprintName = "Wefox PokedexUITests"
+               ReferencedContainer = "container:Wefox Pokedex.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -61,6 +85,12 @@
             ReferencedContainer = "container:Wefox Pokedex.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "UITesting"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
