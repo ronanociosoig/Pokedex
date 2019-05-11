@@ -64,7 +64,7 @@ class BackpackPresenter: BackpackPresenting {
     }
     
     func pokemonName(at index: Int) -> String {
-        return pokemons()[index].name
+        return pokemons()[index].name.capitalized
     }
     
     func selectItem(at index: Int) {
