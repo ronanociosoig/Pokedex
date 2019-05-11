@@ -15,10 +15,15 @@ target 'Wefox Pokedex' do
     inherit! :search_paths
     # Pods for testing
   end
-
-  target 'Wefox PokedexUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+  
 end
+
+target 'Wefox PokedexUITests' do
+  use_frameworks!
+  inhibit_all_warnings!
+  
+  pod 'Haneke'
+  pod 'JGProgressHUD'
+  pod 'Moya'
+end
+
