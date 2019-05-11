@@ -23,5 +23,9 @@ class AppController: AppControlling {
         coordinator?.start()
         
         dataProvider.notifier = coordinator as? Notifier
+        
+        if Configuration.uiTesting == true {
+            Storage.remove(AppData.pokemonFile, from: dataProvider.appData.directory())
+        }
     }
 }

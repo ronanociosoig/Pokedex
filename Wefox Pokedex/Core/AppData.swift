@@ -29,13 +29,20 @@ class AppData {
     }
     
     func load() {
-        if Storage.fileExists(AppData.pokemonFile, in: .documents) {
-            pokemons = Storage.retrieve(AppData.pokemonFile, from: .documents, as: [LocalPokemon].self)
+        if Storage.fileExists(AppData.pokemonFile, in: directory()) {
+            pokemons = Storage.retrieve(AppData.pokemonFile, from: directory(), as: [LocalPokemon].self)
         }
     }
     
     func save() {
-        Storage.store(pokemons, to: .documents, as: AppData.pokemonFile)
+        Storage.store(pokemons, to: directory(), as: AppData.pokemonFile)
+    }
+    
+    func directory() -> Storage.Directory {
+        if Configuration.uiTesting == true {
+            return .caches
+        }
+        return .documents
     }
     
     func sortByOrder() {
