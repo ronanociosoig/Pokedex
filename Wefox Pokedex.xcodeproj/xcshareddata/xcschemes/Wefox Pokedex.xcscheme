@@ -22,15 +22,15 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF4E3CCE22844C2500760406"
-               BuildableName = "Wefox PokedexUITests.xctest"
-               BlueprintName = "Wefox PokedexUITests"
+               BlueprintIdentifier = "AF4E3CC322844C2500760406"
+               BuildableName = "Wefox PokedexTests.xctest"
+               BlueprintName = "Wefox PokedexTests"
                ReferencedContainer = "container:Wefox Pokedex.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -49,16 +49,6 @@
                BlueprintIdentifier = "AF4E3CC322844C2500760406"
                BuildableName = "Wefox PokedexTests.xctest"
                BlueprintName = "Wefox PokedexTests"
-               ReferencedContainer = "container:Wefox Pokedex.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF4E3CCE22844C2500760406"
-               BuildableName = "Wefox PokedexUITests.xctest"
-               BlueprintName = "Wefox PokedexUITests"
                ReferencedContainer = "container:Wefox Pokedex.xcodeproj">
             </BuildableReference>
          </TestableReference>

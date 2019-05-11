@@ -32,7 +32,9 @@ extension PokemonSearchEndpoint: TargetType {
     }
     
     var sampleData: Data {
-        return Data()
+        // swiftlint:disable force_try force_unwrapping
+        return try! MockData.loadResponse()!
+        // swiftlint:enable force_try force_unwrapping
     }
     
     var task: Task {
