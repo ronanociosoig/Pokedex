@@ -18,14 +18,17 @@ class AppController: AppControlling {
     func start() {
         let dataProvider = DataProvider(service: NetworkService())
         
+        if Configuration.uiTesting == true {
+            print("remove file")
+            Storage.remove(AppData.pokemonFile, from: dataProvider.appData.directory())
+        }
+        
+        dataProvider.start()
+        
         coordinator = Coordinator()
         coordinator?.dataProvider = dataProvider
         coordinator?.start()
         
         dataProvider.notifier = coordinator as? Notifier
-        
-        if Configuration.uiTesting == true {
-            Storage.remove(AppData.pokemonFile, from: dataProvider.appData.directory())
-        }
     }
 }

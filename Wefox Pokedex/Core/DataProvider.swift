@@ -31,6 +31,9 @@ class DataProvider: DataProviding {
     
     required init(service: ServiceProvider) {
         self.networkService = service
+    }
+    
+    func start() {
         appData.load()
         appData.sortByOrder()
     }
