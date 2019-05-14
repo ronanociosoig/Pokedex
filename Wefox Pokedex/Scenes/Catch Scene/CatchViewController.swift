@@ -68,7 +68,11 @@ extension CatchViewController: CatchView {
     }
     
     func showNotFoundAlert() {
-        let alertController = alert(with: Constants.Translations.CatchScene.noPokemonFoundAlertTitle)
+        showError(message: Constants.Translations.CatchScene.noPokemonFoundAlertTitle)
+    }
+    
+    func showError(message: String) {
+        let alertController = alert(with: message)
         let okButton = leaveButton(with: Constants.Translations.ok)
         
         alertController.addAction(okButton)

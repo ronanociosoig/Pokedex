@@ -11,6 +11,7 @@ import JGProgressHUD
 
 protocol Updatable {
     func update()
+    func showError(message: String)
 }
 
 protocol Coordinating {
@@ -156,7 +157,7 @@ extension Coordinator: Notifier {
                     self.presenter?.update()
                     return
                 }
-                self.showAlert(with: errorMessage)
+                self.presenter?.showError(message: errorMessage)
             } else {
                 self.presenter?.update()
             }

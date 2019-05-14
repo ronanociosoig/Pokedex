@@ -11,6 +11,7 @@ protocol CatchView: class {
     func showLeaveOrCatchAlert()
     func showLeaveItAlert()
     func showNotFoundAlert()
+    func showError(message: String)
 }
 
 protocol CatchPresenting: class {
@@ -48,6 +49,10 @@ class CatchPresenter: CatchPresenting, Updatable {
         }
         
         dataProvider.newSpecies() ? view.showLeaveOrCatchAlert() : view.showLeaveItAlert()
+    }
+    
+    func showError(message: String) {
+        view?.showError(message: message)
     }
     
     func pokemon() -> ScreenPokemon? {
