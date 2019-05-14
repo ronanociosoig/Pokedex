@@ -11,8 +11,6 @@
 		6E2EA3180B6E995D7D1E1912 /* Pods_Wefox_Pokedex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EEC257A1526765248017F02 /* Pods_Wefox_Pokedex.framework */; };
 		971A0ACDAF04271BD91B8B3C /* Pods_Wefox_PokedexUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C0C0E0B2A5DF2A9F8D1479 /* Pods_Wefox_PokedexUITests.framework */; };
 		AF4E3CB422844C2200760406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3CB322844C2200760406 /* AppDelegate.swift */; };
-		AF4E3CB622844C2200760406 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3CB522844C2200760406 /* ViewController.swift */; };
-		AF4E3CB922844C2200760406 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4E3CB722844C2200760406 /* Main.storyboard */; };
 		AF4E3CBB22844C2500760406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4E3CBA22844C2500760406 /* Assets.xcassets */; };
 		AF4E3CBE22844C2500760406 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4E3CBC22844C2500760406 /* LaunchScreen.storyboard */; };
 		AF4E3CC922844C2500760406 /* Wefox_PokedexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3CC822844C2500760406 /* Wefox_PokedexTests.swift */; };
@@ -106,8 +104,6 @@
 		A5C0C0E0B2A5DF2A9F8D1479 /* Pods_Wefox_PokedexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wefox_PokedexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4E3CB022844C2200760406 /* Wefox Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wefox Pokedex.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4E3CB322844C2200760406 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF4E3CB522844C2200760406 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AF4E3CB822844C2200760406 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF4E3CBA22844C2500760406 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF4E3CBD22844C2500760406 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF4E3CBF22844C2500760406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -262,8 +258,6 @@
 				AF4E3CFC228456BC00760406 /* Extensions */,
 				AF4E3CE222844E6800760406 /* Scenes */,
 				AF4E3CE122844E5600760406 /* Core */,
-				AF4E3CB522844C2200760406 /* ViewController.swift */,
-				AF4E3CB722844C2200760406 /* Main.storyboard */,
 				AF4E3CBA22844C2500760406 /* Assets.xcassets */,
 				AF4E3CBC22844C2500760406 /* LaunchScreen.storyboard */,
 				AF4E3CBF22844C2500760406 /* Info.plist */,
@@ -563,7 +557,6 @@
 				AF4E3D4A2284DA4800760406 /* PokemonView.xib in Resources */,
 				AF4E3CBB22844C2500760406 /* Assets.xcassets in Resources */,
 				AF4E3DA822870CCA00760406 /* Pokemon5.json in Resources */,
-				AF4E3CB922844C2200760406 /* Main.storyboard in Resources */,
 				AF4E3D1A228476C800760406 /* BackpackViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -758,7 +751,6 @@
 				AF4E3D382284B33900760406 /* MockData.swift in Sources */,
 				AF4E3D682285C6C800760406 /* PokemonDetailViewController.swift in Sources */,
 				AF4E3D442284D4F500760406 /* ScreenPokemon.swift in Sources */,
-				AF4E3CB622844C2200760406 /* ViewController.swift in Sources */,
 				AF4E3D3222848B6800760406 /* PokemonSearchEndpoint.swift in Sources */,
 				AF4E3D2B2284880000760406 /* LocalPokemon.swift in Sources */,
 				AF4E3D342284B0D600760406 /* Configuration.swift in Sources */,
@@ -826,14 +818,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AF4E3CB722844C2200760406 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF4E3CB822844C2200760406 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AF4E3CBC22844C2500760406 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
