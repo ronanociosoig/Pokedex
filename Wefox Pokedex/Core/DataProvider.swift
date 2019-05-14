@@ -16,7 +16,7 @@ struct Log {
 }
 
 protocol DataProviding {
-    init(service: ServiceProvider)
+    init(service: PokemonSearchLoadingService)
     
     func search(identifier: Int)
     func catchPokemon()
@@ -27,9 +27,9 @@ protocol DataProviding {
 class DataProvider: DataProviding {
     let appData = AppData()
     var notifier: Notifier?
-    private let networkService: ServiceProvider
+    private let networkService: PokemonSearchLoadingService
     
-    required init(service: ServiceProvider) {
+    required init(service: PokemonSearchLoadingService) {
         self.networkService = service
     }
     
@@ -39,11 +39,11 @@ class DataProvider: DataProviding {
     }
     
     func search(identifier: Int) {
-        let searchService = networkService.makePokemonService()
+        //let searchService = networkService.makePokemonService()
         
         appData.pokemon = nil
         
-        searchService.search(identifier: identifier) { (data, errorMessage) in
+        networkService.search(identifier: identifier) { (data, errorMessage) in
             let queue = DispatchQueue.main
             
             if let errorMessage = errorMessage {

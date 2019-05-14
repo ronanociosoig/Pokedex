@@ -16,7 +16,7 @@ class AppController: AppControlling {
     var coordinator: Coordinating?
     
     func start() {
-        let dataProvider = DataProvider(service: NetworkService())
+        let dataProvider = DataProvider(service: PokemonSearchService())
         
         if Configuration.uiTesting == true {
             print("remove file")

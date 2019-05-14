@@ -13,12 +13,6 @@ import Moya
 
 @testable import Wefox_Pokedex
 
-class MockServiceProvider: ServiceProvider {
-    func makePokemonService() -> PokemonSearchLoadingService {
-        return MockPokemonSearchService()
-    }
-}
-
 class MockPokemonSearchService: PokemonSearchLoadingService {
     var provider: MoyaProvider<PokemonSearchEndpoint> {
         return MoyaProvider<PokemonSearchEndpoint>(stubClosure: MoyaProvider.immediatelyStub)

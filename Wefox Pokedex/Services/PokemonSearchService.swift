@@ -11,17 +11,6 @@ import Foundation
 import Moya
 import Result
 
-protocol ServiceProvider: AnyObject {
-    func makePokemonService() -> PokemonSearchLoadingService
-}
-
-class NetworkService: ServiceProvider {
-    
-    func makePokemonService() -> PokemonSearchLoadingService {
-        return PokemonSearchService()
-    }
-}
-
 protocol PokemonSearchLoadingService: class {
     var provider: MoyaProvider<PokemonSearchEndpoint> { get }
     
