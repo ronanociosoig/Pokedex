@@ -29,15 +29,7 @@ struct Configuration {
         return arguments.contains("NetworkTesting")
     }
     
-    static var mockSearchData: Data? {
-        do {
-            guard let data = try MockData.loadResponse() else {
-                return Data()
-            }
-            return data
-        } catch {
-            return Data()
-        }
-
+    static var authenticationErrorTesting: Bool {
+        return CommandLine.arguments.contains("Error_401")
     }
 }

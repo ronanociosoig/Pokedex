@@ -18,8 +18,20 @@ protocol PokemonSearchLoadingService: class {
 }
 
 class PokemonSearchService: PokemonSearchLoadingService {
+    // swiftlint:disable force_unwrapping
+    let customEndpointClosure = { (target: PokemonSearchEndpoint) -> Endpoint in
+        return Endpoint(url: URL(target: target).absoluteString,
+                        sampleResponseClosure: { .networkResponse(401, "Not authorized".data(using: .utf8)!) },
+                        method: target.method,
+                        task: target.task,
+                        httpHeaderFields: target.headers)
+    }
+    
     var provider: MoyaProvider<PokemonSearchEndpoint> {
-        if Configuration.uiTesting == true {
+        
+        if Configuration.authenticationErrorTesting {
+            return MoyaProvider<PokemonSearchEndpoint>(endpointClosure: customEndpointClosure, stubClosure: MoyaProvider.immediatelyStub)
+        } else if Configuration.uiTesting == true {
             return MoyaProvider<PokemonSearchEndpoint>(stubClosure: MoyaProvider.immediatelyStub)
         } else if Configuration.networkTesting {
             return MoyaProvider<PokemonSearchEndpoint>(plugins: [NetworkLoggerPlugin(verbose: true)])
@@ -32,13 +44,16 @@ class PokemonSearchService: PokemonSearchLoadingService {
         provider.request(.search(identifier: identifier)) { result in
             switch result {
             case .success(let response):
-                
                 if response.statusCode == 404 {
                     completion(nil, Constants.Translations.Error.statusCode404)
                     return
                 }
                 
-                completion(response.data, nil)
+                if 200 ..< 300 ~= response.statusCode {
+                    completion(response.data, nil)
+                } else {
+                    completion(nil, "Error: \(response.statusCode)")
+                }
             case .failure(let error):
                 completion(nil, error.localizedDescription)
             }
