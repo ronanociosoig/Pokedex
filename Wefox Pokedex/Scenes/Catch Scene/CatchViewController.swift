@@ -13,12 +13,6 @@ class CatchViewController: UIViewController {
     var presenter: CatchPresenting?
     private var pokemonView: PokemonView?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        guard let presenter = presenter else { return }
-        presenter.viewDidLoad()
-    }
-    
     @IBAction func ballAction() {
         dismiss(animated: true) {
             guard let presenter = self.presenter else { return }
@@ -52,20 +46,11 @@ extension CatchViewController: CatchView {
     }
     
     func showLeaveOrCatchAlert() {
-        let alertController = UIAlertController(title: Constants.Translations.CatchScene.leaveOrCatchAlertMessageTitle,
-                                                message: nil,
-                                                preferredStyle: .alert)
+        let alertController = alert(with: Constants.Translations.CatchScene.leaveOrCatchAlertMessageTitle)
+        let button = leaveButton(with: Constants.Translations.CatchScene.leaveItButtonTitle)
+        let catchButton = alertButton(with: Constants.Translations.CatchScene.catchItButtonTitle)
         
-        let leaveButton = UIAlertAction(title: Constants.Translations.CatchScene.leaveItButtonTitle,
-                                        style: .default) { _ in
-                                            self.leavePokemonAction()
-        }
-        
-        let catchButton = UIAlertAction(title: Constants.Translations.CatchScene.catchItButtonTitle,
-                                        style: .default,
-                                        handler: nil)
-        
-        alertController.addAction(leaveButton)
+        alertController.addAction(button)
         alertController.addAction(catchButton)
         present(alertController,
                                animated: true,
@@ -73,34 +58,41 @@ extension CatchViewController: CatchView {
     }
     
     func showLeaveItAlert() {
-        let alertController = UIAlertController(title: Constants.Translations.CatchScene.alreadyHaveItAlertMessageTitle,
-                                                message: nil,
-                                                preferredStyle: .alert)
+        let alertController = alert(with: Constants.Translations.CatchScene.alreadyHaveItAlertMessageTitle)
+        let button = leaveButton(with: Constants.Translations.CatchScene.leaveItButtonTitle)
         
-        let leaveButton = UIAlertAction(title: Constants.Translations.CatchScene.leaveItButtonTitle,
-                                        style: .default) { _ in
-                                            self.leavePokemonAction()
-        }
-        
-        alertController.addAction(leaveButton)
+        alertController.addAction(button)
         present(alertController,
                 animated: true,
                 completion: nil)
     }
     
     func showNotFoundAlert() {
-        let alertController = UIAlertController(title: Constants.Translations.CatchScene.noPokemonFoundAlertTitle,
-                                                message: nil,
-                                                preferredStyle: .alert)
-        
-        let okButton = UIAlertAction(title: Constants.Translations.ok,
-                                        style: .default) { _ in
-                                            self.leavePokemonAction()
-        }
+        let alertController = alert(with: Constants.Translations.CatchScene.noPokemonFoundAlertTitle)
+        let okButton = leaveButton(with: Constants.Translations.ok)
         
         alertController.addAction(okButton)
         present(alertController,
                 animated: true,
                 completion: nil)
+    }
+    
+    private func alert(with title: String) -> UIAlertController {
+        return UIAlertController(title: title,
+                                 message: nil,
+                                 preferredStyle: .alert)
+    }
+    
+    private func leaveButton(with title: String) -> UIAlertAction {
+        return UIAlertAction(title: title,
+                             style: .default) { _ in
+                                self.leavePokemonAction()
+        }
+    }
+    
+    private func alertButton(with title: String) -> UIAlertAction {
+        return UIAlertAction(title: title,
+                             style: .default,
+                             handler: nil)
     }
 }

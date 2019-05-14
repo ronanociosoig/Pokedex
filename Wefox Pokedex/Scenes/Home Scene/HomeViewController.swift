@@ -10,13 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     var presenter: HomePresenting?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        guard let presenter = presenter else { return }
-        presenter.viewDidLoad()
-    }
-    
+
     @IBAction func ballButtonAction() {
         guard let presenter = presenter else { return }
         presenter.ballButtonAction()
@@ -26,7 +20,6 @@ class HomeViewController: UIViewController {
         guard let presenter = presenter else { return }
         presenter.backpackButtonAction()
     }
-    
 }
 
 extension HomeViewController: HomeView {

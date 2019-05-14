@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PokemonDetailView: class {
-    func setPokemon(name: String)
+    
 }
 
 protocol PokemonDetailPresenting: class {

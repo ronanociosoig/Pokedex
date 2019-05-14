@@ -11,7 +11,6 @@ protocol HomeView: class {
 }
 
 protocol HomePresenting: class {
-    func viewDidLoad()
     func ballButtonAction()
     func backpackButtonAction()
 }
@@ -34,10 +33,6 @@ class HomePresenter: HomePresenting {
         self.view = view
         self.actions = actions
         self.dataProvider = dataProvider
-    }
-    
-    func viewDidLoad() {
-    
     }
     
     func ballButtonAction() {

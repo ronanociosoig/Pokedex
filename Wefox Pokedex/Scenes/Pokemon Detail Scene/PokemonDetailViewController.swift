@@ -15,8 +15,12 @@ class PokemonDetailViewController: UIViewController {
     private var pokemonView: PokemonView?
     
     override func viewDidLoad() {
+        addPokemonView()
+    }
+    
+    private func addPokemonView() {
         guard let pokemonView = PokemonView.loadFromNib() else { return }
-
+        
         view.addSubview(pokemonView)
         
         pokemonView.center = view.center
@@ -28,14 +32,12 @@ class PokemonDetailViewController: UIViewController {
         self.pokemonView = pokemonView
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        configurePokemonView()
+    }
+    
+    private func configurePokemonView() {
         guard let presenter = presenter else { return }
         guard let pokemonView = pokemonView else { return }
         
@@ -53,7 +55,7 @@ class PokemonDetailViewController: UIViewController {
         pokemonView.types.text = presenter.types()
         
         title = presenter.name().capitalized
-
+        
         guard let imagePath = presenter.imagePath() else { return }
         guard let imageURL = URL(string: imagePath) else { return }
         pokemonView.imageView.hnk_setImage(from: imageURL)
@@ -61,7 +63,5 @@ class PokemonDetailViewController: UIViewController {
 }
 
 extension PokemonDetailViewController: PokemonDetailView {
-    func setPokemon(name: String) {
-        title = name
-    }
+
 }

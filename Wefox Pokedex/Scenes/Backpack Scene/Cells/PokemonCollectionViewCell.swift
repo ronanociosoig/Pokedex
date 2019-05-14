@@ -11,9 +11,4 @@ import UIKit
 class PokemonCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var name: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
 }

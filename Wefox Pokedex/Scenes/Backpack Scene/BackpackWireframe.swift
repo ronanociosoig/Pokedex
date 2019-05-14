@@ -33,9 +33,3 @@ class BackpackWireframe {
         viewController.presenter = presenter
     }
 }
-
-extension UINavigationController {
-    @objc func closeScene() {
-        self.dismiss(animated: true, completion: nil)
-    }
-}
