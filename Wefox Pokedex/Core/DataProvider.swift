@@ -53,6 +53,7 @@ class DataProvider: DataProviding {
                 }
                 
                 os_log("Error message: %s", log: Log.network, type: .error, errorMessage)
+                self.notifier?.dataReceived(errorMessage: errorMessage, on: queue)
                 return
             }
             
