@@ -6,7 +6,6 @@
 <p align="center">
   <a href="#architecture">Architecture</a>
   • <a href="#implementation">Implementation</a>
-  • <a href="#integrations">Integrations</a>
   • <a href="#automated-testing">Automated Testing</a>
 </p>
 
