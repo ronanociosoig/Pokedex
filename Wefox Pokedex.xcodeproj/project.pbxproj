@@ -79,6 +79,7 @@
 		AFA2E02D2296A77C0053F3EC /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2E02C2296A77B0053F3EC /* BaseCoordinator.swift */; };
 		AFA2E02F2296BAB60053F3EC /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2E02E2296BAB60053F3EC /* HomeCoordinator.swift */; };
 		AFA2E0312296CAC50053F3EC /* CatchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2E0302296CAC50053F3EC /* CatchCoordinator.swift */; };
+		AFA2E0332296D8950053F3EC /* BackpackCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2E0322296D8950053F3EC /* BackpackCoordinator.swift */; };
 		AFA5E44E228B668E00FC60C1 /* Server_401_Error_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5E44D228B668E00FC60C1 /* Server_401_Error_Test.swift */; };
 /* End PBXBuildFile section */
 
@@ -180,6 +181,7 @@
 		AFA2E02C2296A77B0053F3EC /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		AFA2E02E2296BAB60053F3EC /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		AFA2E0302296CAC50053F3EC /* CatchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchCoordinator.swift; sourceTree = "<group>"; };
+		AFA2E0322296D8950053F3EC /* BackpackCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackpackCoordinator.swift; sourceTree = "<group>"; };
 		AFA5E44D228B668E00FC60C1 /* Server_401_Error_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server_401_Error_Test.swift; sourceTree = "<group>"; };
 		E7590E6540283C1C3B552146 /* Pods-Wefox PokedexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wefox PokedexTests.release.xcconfig"; path = "Target Support Files/Pods-Wefox PokedexTests/Pods-Wefox PokedexTests.release.xcconfig"; sourceTree = "<group>"; };
 		FA1D54F8B3BB6B127C6304B8 /* Pods-Wefox PokedexUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wefox PokedexUITests.release.xcconfig"; path = "Target Support Files/Pods-Wefox PokedexUITests/Pods-Wefox PokedexUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				AF4E3D14228476C800760406 /* BackpackDataProvider.swift */,
 				AF4E3D15228476C800760406 /* BackpackDelegate.swift */,
 				AF4E3D16228476C800760406 /* BackpackWireframe.swift */,
+				AFA2E0322296D8950053F3EC /* BackpackCoordinator.swift */,
 			);
 			path = "Backpack Scene";
 			sourceTree = "<group>";
@@ -758,6 +761,7 @@
 				AF4E3D19228476C800760406 /* BackpackDataSource.swift in Sources */,
 				AFA2E0312296CAC50053F3EC /* CatchCoordinator.swift in Sources */,
 				AF4E3D08228474CC00760406 /* CatchActions.swift in Sources */,
+				AFA2E0332296D8950053F3EC /* BackpackCoordinator.swift in Sources */,
 				AF4E3D502285742B00760406 /* Generator.swift in Sources */,
 				AF4E3D0B228474CC00760406 /* CatchViewController.swift in Sources */,
 				AF4E3CFB2284560800760406 /* Actions.swift in Sources */,

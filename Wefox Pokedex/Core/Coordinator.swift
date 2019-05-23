@@ -79,19 +79,29 @@ class Coordinator: BaseCoordinator, Coordinating {
     
     func showBackpackScene() {
         guard let dataProvider = dataProvider else { return }
-        
-        let navigationController = BackpackWireframe.makeNavigationController()
-        guard let viewController = navigationController.topViewController as? BackpackViewController else { return }
-        
-        BackpackWireframe.prepare(viewController,
-                                  actions: actions as BackpackActions,
-                                  dataProvider: dataProvider as BackpackDataProvider)
-        
         guard let topViewController = window.rootViewController else { return }
         
-        topViewController.present(navigationController, animated: true, completion: nil)
+        let backbackCoordinator = BackpackCoordinator(rootViewController: topViewController,
+                                                      actions: actions as BackpackActions,
+                                                      dataProvider: dataProvider as BackpackDataProvider)
         
-        currentViewController = navigationController
+        // let navigationController = BackpackWireframe.makeNavigationController()
+        // guard let viewController = navigationController.topViewController as? BackpackViewController else { return }
+        
+        // BackpackWireframe.prepare(viewController,
+        //                          actions: actions as BackpackActions,
+        //                          dataProvider: dataProvider as BackpackDataProvider)
+        
+        // guard let topViewController = window.rootViewController else { return }
+        
+        // topViewController.present(navigationController, animated: true, completion: nil)
+        
+        // currentViewController = navigationController
+        
+        coordinate(to: backbackCoordinator)
+        
+        currentViewController = backbackCoordinator.viewController
+        presenter = backbackCoordinator.presenter
     }
     
     func showPokemonDetailScene(pokemon: LocalPokemon) {
