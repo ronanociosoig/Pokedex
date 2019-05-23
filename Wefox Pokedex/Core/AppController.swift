@@ -19,7 +19,8 @@ class AppController: AppControlling {
         let dataProvider = DataProvider(service: PokemonSearchService())
         
         if Configuration.uiTesting == true {
-            Storage.remove(AppData.pokemonFile, from: dataProvider.appData.directory())
+            let storage = FileStorage()
+            storage.remove(AppData.pokemonFile, from: dataProvider.appData.directory())
         }
         
         dataProvider.start()

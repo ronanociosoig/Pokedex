@@ -14,6 +14,12 @@ class AppData {
     var pokemon: Pokemon?
     var pokemons = [LocalPokemon]()
     
+    let storage: Storable
+    
+    init(storage: Storable) {
+        self.storage = storage
+    }
+    
     func newSpecies() -> Bool {
         guard let pokemon = pokemon else { return false }
         
@@ -29,16 +35,14 @@ class AppData {
     }
     
     func load() {
-        if Storage.fileExists(AppData.pokemonFile, in: directory()) {
-            pokemons = Storage.retrieve(AppData.pokemonFile, from: directory(), as: [LocalPokemon].self)
-        }
+        pokemons = storage.load(AppData.pokemonFile, from: directory(), as: [LocalPokemon].self)
     }
     
     func save() {
-        Storage.store(pokemons, to: directory(), as: AppData.pokemonFile)
+        storage.save(pokemons, to: directory(), as: AppData.pokemonFile)
     }
     
-    func directory() -> Storage.Directory {
+    func directory() -> Directory {
         if Configuration.uiTesting == true {
             return .caches
         }

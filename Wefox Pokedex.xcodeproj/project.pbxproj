@@ -75,6 +75,7 @@
 		AF4E3D682285C6C800760406 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D622285C6C800760406 /* PokemonDetailViewController.swift */; };
 		AF4E3D6A2285C6C800760406 /* PokemonDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3D642285C6C800760406 /* PokemonDetailWireframe.swift */; };
 		AF4E3DA822870CCA00760406 /* Pokemon5.json in Resources */ = {isa = PBXBuildFile; fileRef = AF4E3D3A2284C4D800760406 /* Pokemon5.json */; };
+		AFA2E02B2296935B0053F3EC /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2E02A2296935B0053F3EC /* FileStorage.swift */; };
 		AFA5E44E228B668E00FC60C1 /* Server_401_Error_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5E44D228B668E00FC60C1 /* Server_401_Error_Test.swift */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +173,7 @@
 		AF4E3D612285C6C800760406 /* PokemonDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PokemonDetailViewController.storyboard; sourceTree = "<group>"; };
 		AF4E3D622285C6C800760406 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		AF4E3D642285C6C800760406 /* PokemonDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailWireframe.swift; sourceTree = "<group>"; };
+		AFA2E02A2296935B0053F3EC /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		AFA5E44D228B668E00FC60C1 /* Server_401_Error_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server_401_Error_Test.swift; sourceTree = "<group>"; };
 		E7590E6540283C1C3B552146 /* Pods-Wefox PokedexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wefox PokedexTests.release.xcconfig"; path = "Target Support Files/Pods-Wefox PokedexTests/Pods-Wefox PokedexTests.release.xcconfig"; sourceTree = "<group>"; };
 		FA1D54F8B3BB6B127C6304B8 /* Pods-Wefox PokedexUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wefox PokedexUITests.release.xcconfig"; path = "Target Support Files/Pods-Wefox PokedexUITests/Pods-Wefox PokedexUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				AF4E3D5C2285B54D00760406 /* Storage.swift */,
+				AFA2E02A2296935B0053F3EC /* FileStorage.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -747,6 +750,7 @@
 				AF4E3D502285742B00760406 /* Generator.swift in Sources */,
 				AF4E3D0B228474CC00760406 /* CatchViewController.swift in Sources */,
 				AF4E3CFB2284560800760406 /* Actions.swift in Sources */,
+				AFA2E02B2296935B0053F3EC /* FileStorage.swift in Sources */,
 				AF4E3D1B228476C800760406 /* BackpackViewController.swift in Sources */,
 				AF4E3D1E228476C800760406 /* BackpackWireframe.swift in Sources */,
 				AF4E3D3022848AB500760406 /* PokemonSearchService.swift in Sources */,

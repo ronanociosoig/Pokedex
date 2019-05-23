@@ -19,7 +19,7 @@ class AppDataTests: XCTestCase {
     }
     
     func testNewSpecies() {
-        let appData = AppData()
+        let appData = AppData(storage: FileStorage())
         let pokemon5 = loadPokemon(identifier: .pokemon5)
         let pokemon12 = loadPokemon(identifier: .pokemon12)
         
@@ -55,7 +55,7 @@ class AppDataTests: XCTestCase {
     }
     
     func testSortByOrder() {
-        let appData = AppData()
+        let appData = AppData(storage: FileStorage())
         let pokemon5 = loadPokemon(identifier: .pokemon5)
         let pokemon12 = loadPokemon(identifier: .pokemon12)
         let localPokemon5 = PokemonParser.parse(pokemon: pokemon5)

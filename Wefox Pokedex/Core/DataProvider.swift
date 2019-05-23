@@ -25,7 +25,7 @@ protocol DataProviding {
 }
 
 class DataProvider: DataProviding {
-    let appData = AppData()
+    let appData = AppData(storage: FileStorage())
     var notifier: Notifier?
     private let networkService: PokemonSearchLoadingService
     
@@ -39,8 +39,6 @@ class DataProvider: DataProviding {
     }
     
     func search(identifier: Int) {
-        //let searchService = networkService.makePokemonService()
-        
         appData.pokemon = nil
         
         networkService.search(identifier: identifier) { (data, errorMessage) in
