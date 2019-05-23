@@ -15,6 +15,7 @@ protocol Updatable {
 }
 
 protocol Coordinating {
+    var window: UIWindow { get }
     var dataProvider: DataProvider? { get set }
     
     func start()
@@ -27,7 +28,7 @@ protocol Coordinating {
     func showAlert(with errorMessage: String)
 }
 
-class Coordinator: Coordinating {
+class Coordinator: BaseCoordinator, Coordinating {
     let window: UIWindow
     var dataProvider: DataProvider?
     var hud: JGProgressHUD?
@@ -35,12 +36,12 @@ class Coordinator: Coordinating {
     var presenter: Updatable?
     var currentViewController: UIViewController?
     
-    init() {
+    override init() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()
     }
     
-    func start() {
+    override func start() {
         actions.dataProvider = dataProvider
         
         showHomeScene()
@@ -48,28 +49,26 @@ class Coordinator: Coordinating {
     
     func showHomeScene() {
         guard let dataProvider = dataProvider else { return }
-        let viewController = HomeWireframe.makeViewController()
-        HomeWireframe.prepare(viewController, actions: actions as HomeActions, dataProvider: dataProvider as HomeDataProvider)
-        
-        window.rootViewController = viewController
+        let homeCoordinator = HomeCoordinator(window: window,
+                                              dataProvider: dataProvider as HomeDataProvider, actions: actions as HomeActions)
+        coordinate(to: homeCoordinator)
     }
     
     func showCatchScene() {
         guard let dataProvider = dataProvider else { return }
-        let viewController = CatchWireframe.makeViewController()
-        
-        CatchWireframe.prepare(viewController, actions: actions as CatchActions, dataProvider: dataProvider as CatchDataProvider)
-        
         guard let topViewController = window.rootViewController else { return }
         
-        topViewController.present(viewController, animated: true, completion: nil)
-        
+        let catchCoordinator = CatchCoordinator(rootViewController: topViewController,
+                                                dataProvider: dataProvider as CatchDataProvider,
+                                                actions: actions as CatchActions)
+        coordinate(to: catchCoordinator)
+        guard let viewController = catchCoordinator.viewController as? CatchViewController else {
+            return
+        }
+        currentViewController = viewController
         presenter = viewController.presenter as? Updatable
         
-        currentViewController = viewController
-        
         searchNextPokemon()
-        
         showLoading()
     }
     
