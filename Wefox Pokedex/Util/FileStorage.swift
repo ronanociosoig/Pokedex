@@ -16,7 +16,7 @@ enum Directory {
 protocol Storable {
     func fileExists(fileName: String, in directory: Directory) -> Bool
     func save<T: Encodable>(_ object: T, to directory: Directory, as fileName: String)
-    func load<T: Decodable>(_ fileName: String, from directory: Directory, as type: T.Type) -> T
+    func load<T: Decodable>(_ fileName: String, from directory: Directory, as type: T.Type) -> T?
     func remove(_ fileName: String, from directory: Directory)
 }
 
@@ -25,8 +25,12 @@ class FileStorage: Storable {
         Storage.store(object, to: directoryAdaptor(directory: directory), as: fileName)
     }
     
-    func load<T>(_ fileName: String, from directory: Directory, as type: T.Type) -> T where T: Decodable {
-        return Storage.retrieve(fileName, from: directoryAdaptor(directory: directory), as: T.self)
+    func load<T>(_ fileName: String, from directory: Directory, as type: T.Type) -> T? where T: Decodable {
+        if fileExists(fileName: fileName, in: directory) {
+            return Storage.retrieve(fileName, from: directoryAdaptor(directory: directory), as: T.self)
+        }
+        
+        return nil
     }
     
     func fileExists(fileName: String, in directory: Directory) -> Bool {
