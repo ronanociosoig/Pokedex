@@ -21,6 +21,7 @@ class BackpackWireframe {
         let navigationBarButton = UIBarButtonItem(title: Constants.Translations.BackpackScene.closeButton,
                                                   style: .plain) { _ in
                                                     viewController.dismiss(animated: true, completion: nil)
+                                                    // need to call free on the coordinator.
         }
         
         viewController.navigationItem.leftBarButtonItem = navigationBarButton

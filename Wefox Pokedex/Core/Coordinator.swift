@@ -85,19 +85,6 @@ class Coordinator: BaseCoordinator, Coordinating {
                                                       actions: actions as BackpackActions,
                                                       dataProvider: dataProvider as BackpackDataProvider)
         
-        // let navigationController = BackpackWireframe.makeNavigationController()
-        // guard let viewController = navigationController.topViewController as? BackpackViewController else { return }
-        
-        // BackpackWireframe.prepare(viewController,
-        //                          actions: actions as BackpackActions,
-        //                          dataProvider: dataProvider as BackpackDataProvider)
-        
-        // guard let topViewController = window.rootViewController else { return }
-        
-        // topViewController.present(navigationController, animated: true, completion: nil)
-        
-        // currentViewController = navigationController
-        
         coordinate(to: backbackCoordinator)
         
         currentViewController = backbackCoordinator.viewController
@@ -105,13 +92,12 @@ class Coordinator: BaseCoordinator, Coordinating {
     }
     
     func showPokemonDetailScene(pokemon: LocalPokemon) {
-        let viewController = PokemonDetailWireframe.makeViewController()
         
-        PokemonDetailWireframe.prepare(viewController, pokemon: pokemon)
+        guard let rootViewController = currentViewController else { return }
         
-        guard let topViewController = currentViewController as? UINavigationController else { return }
+        let detailCoordinator = PokemonDetailCoordinator(rootViewController: rootViewController, pokemon: pokemon)
         
-        topViewController.pushViewController(viewController, animated: true)
+        coordinate(to: detailCoordinator)
     }
     
     func showLoading() {

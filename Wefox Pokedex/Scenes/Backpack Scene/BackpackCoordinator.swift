@@ -1,4 +1,3 @@
-
 //
 //  BackpackCoordinator.swift
 //  Wefox Pokedex
@@ -6,6 +5,7 @@
 //  Created by Ronan on 23/05/2019.
 //  Copyright © 2019 Sonomos. All rights reserved.
 //
+
 import UIKit
 
 class BackpackCoordinator: BaseCoordinator, ViewCoordinator {
@@ -28,7 +28,7 @@ class BackpackCoordinator: BaseCoordinator, ViewCoordinator {
         let navigationController = BackpackWireframe.makeNavigationController()
         guard let viewController = navigationController.topViewController as? BackpackViewController else { return }
         
-        self.viewController = navigationController
+        self.viewController = viewController
         self.presenter = viewController.presenter as? Updatable
         
         BackpackWireframe.prepare(viewController,
