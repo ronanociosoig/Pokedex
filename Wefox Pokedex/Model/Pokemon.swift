@@ -11,9 +11,7 @@ import Foundation
 struct Pokemon: Codable {
     let baseExperience: Int
     let height: Int
-    // swiftlint:disable identifier_name
     let id: Int
-    // swiftlint:enable identifier_name
     let name: String
     let order: Int
     let species: Species

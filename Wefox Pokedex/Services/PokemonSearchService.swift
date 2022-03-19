@@ -9,9 +9,9 @@
 import Foundation
 
 import Moya
-import Result
+// import Result
 
-protocol PokemonSearchLoadingService: class {
+protocol PokemonSearchLoadingService: AnyObject {
     var provider: MoyaProvider<PokemonSearchEndpoint> { get }
     
     func search(identifier: Int, completion: @escaping (_ data: Data?, _ error: String?) -> Void)
@@ -34,7 +34,7 @@ class PokemonSearchService: PokemonSearchLoadingService {
         } else if Configuration.uiTesting == true {
             return MoyaProvider<PokemonSearchEndpoint>(stubClosure: MoyaProvider.immediatelyStub)
         } else if Configuration.networkTesting {
-            return MoyaProvider<PokemonSearchEndpoint>(plugins: [NetworkLoggerPlugin(verbose: true)])
+            return MoyaProvider<PokemonSearchEndpoint>(plugins: [NetworkLoggerPlugin()])
         } else {
             return MoyaProvider<PokemonSearchEndpoint>(callbackQueue: DispatchQueue.global(qos: .background))
         }
