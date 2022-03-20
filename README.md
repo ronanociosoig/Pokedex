@@ -9,6 +9,8 @@
   • <a href="#automated-testing">Automated Testing</a>
 </p>
 
+[![CircleCI](https://circleci.com/gh/ronanociosoig/Pokedex/tree/master.svg?style=svg)](https://circleci.com/gh/ronanociosoig/Pokedex/tree/master)
+
 # Pokedex
 
 This simmple iOS app is a Swift code example to demonstrate an approach used to fetch data from an [API](https://pokeapi.co), parse the response, display some of the data, store it locally, and retrieve it. The aim was to keep this as simple as possible but follow best practices in terms of SOLID principles and design patterns. 
