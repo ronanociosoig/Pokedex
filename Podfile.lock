@@ -1,34 +1,42 @@
 PODS:
-  - Alamofire (4.8.2)
-  - Haneke (1.0.2)
-  - JGProgressHUD (2.0.3)
-  - Moya (13.0.0):
-    - Moya/Core (= 13.0.0)
-  - Moya/Core (13.0.0):
-    - Alamofire (~> 4.1)
-    - Result (~> 4.1)
-  - Result (4.1.0)
+  - Alamofire (5.5.0)
+  - Haneke (1.0.1)
+  - JGProgressHUD (2.2)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
 
 DEPENDENCIES:
-  - Haneke
-  - JGProgressHUD
+  - Haneke (from `https://github.com/ronanociosoig/Haneke.git`)
+  - JGProgressHUD (from `https://github.com/ronanociosoig/JGProgressHUD.git`)
   - Moya
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
-    - Haneke
-    - JGProgressHUD
     - Moya
-    - Result
+
+EXTERNAL SOURCES:
+  Haneke:
+    :git: https://github.com/ronanociosoig/Haneke.git
+  JGProgressHUD:
+    :git: https://github.com/ronanociosoig/JGProgressHUD.git
+
+CHECKOUT OPTIONS:
+  Haneke:
+    :commit: 3a36e7e346324ceb244b9c61747efd7e6c712bfd
+    :git: https://github.com/ronanociosoig/Haneke.git
+  JGProgressHUD:
+    :commit: 9b720f2501846903b092d0f8d6eb2f681ca7c82f
+    :git: https://github.com/ronanociosoig/JGProgressHUD.git
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  Haneke: 01454a67322faa0dd9d81fc0f447885044e71521
-  JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
-  Moya: 161263550064ff8a4948e8ff63137fd72a876292
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Haneke: dec10dd6b1cf56ababce7106685fba8db7e00718
+  JGProgressHUD: 29a7fe0e5143a4798d8cd6b9630bb5d443a85458
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
 
-PODFILE CHECKSUM: b94a54f9c2f5dc7fa65131bd789e3a65d5efd34e
+PODFILE CHECKSUM: 9908150a02e5dfab47ea0bf3b46ae558bbe7eeb3
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.11.2

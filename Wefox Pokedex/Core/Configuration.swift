@@ -18,7 +18,7 @@ struct Configuration {
         
         if result == true {
             // Speed up the animations in the app when running UI testing.
-            UIApplication.shared.keyWindow?.layer.speed = 100
+            // UIApplication.shared.keyWindow?.layer.speed = 100
         }
         
         return result
