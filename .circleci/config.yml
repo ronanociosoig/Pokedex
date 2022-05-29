@@ -4,24 +4,22 @@ version: 2.1
 
 orbs:
   ruby: circleci/ruby@1.2.0
+  macos: circleci/macos@2.1.0
 
 jobs:
   build:
     macos:
       xcode: "13.1.0"
     working_directory: /Users/distiller/project
-    environment:
-      FL_OUTPUT_DIR: output
-      FASTLANE_LANE: test
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
       - ruby/install-deps
-      - run:
-          name: fastlane
-          command: bundle exec fastlane $FASTLANE_LANE
-      - store_artifacts:
-          path: output
-      - store_test_results:
-          path: output/scan
+      - run: gem install fastlane
+
+workflows:
+  basic: # This is the name of the workflow, feel free to change it to better match your workflow.
+  # Inside the workflow, you define the jobs you want to run.
+    jobs:
+      - build
 
